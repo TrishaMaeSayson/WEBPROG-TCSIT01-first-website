@@ -26,7 +26,6 @@ body {
 }
 
 .profile-pic {
-  background-color: #000;
   color: #fff;
   padding: 1.25rem;      
   min-height: 100vh;      
@@ -34,15 +33,6 @@ body {
   height: 120px;
   border-radius: 50%;  /* makes circle */
   object-fit: cover;    /* keeps image proportioned */
-}
-
-.social-icons a {
-  background-color: #000;
-  color: white;
-  margin: 0 5px;
-  justify-content: center; 
-  align-items: center;      
-  
 }
 
 #home{
