@@ -1,35 +1,91 @@
-    .content-section { display: none; } 
-    .content-section.active { display: block; } 
+/* reset box-sizing and remove browser body margin */
+* { box-sizing: border-box; }
+body {
+  margin: 0;                     /* remove white gap at edges */
+  background-color: whitesmoke;  /* page background */
+  font-family: Verdana, sans-serif;
+  color: #666;
+}
 
+/* Optional: remove container padding so the row touches the edges */
+.container-fluid {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* ---------- Sidebar (col-md-2) ---------- */
+/* If you later add a .sidebar class to HTML, replace `.col-md-2` with `.sidebar` here */
+.col-md-2 {
+  background-color: #000; /* black sidebar */
+  color: #fff;
+  padding: 1.25rem;       /* 20px padding inside sidebar */
+  min-height: 100vh;      /* full viewport height */
+  /* do NOT set width here (Bootstrap handles column width) */
+}
+
+/* Nav link appearance and spacing inside sidebar */
+.col-md-2 .nav {
+  margin: 0;
+  padding: 0;
+}
+
+.col-md-2 .nav-item {
+  margin-bottom: 0.35rem; /* gap between items */
+}
+
+/* link states: link, visited, hover/focus (LVHA order recommended) */
+.col-md-2 .nav-link {
+  display: block;
+  color: darkgray;        /* normal color */
+  text-decoration: none;  /* remove underline */
+  padding: 0.45rem 0;     /* vertical spacing for each link */
+  font-size: 18px;        /* reasonable nav font size */
+  transition: color 0.18s;
+}
+
+.col-md-2 .nav-link:visited {
+  color: darkgray;        /* keep visited same as normal */
+}
+
+.col-md-2 .nav-link:hover,
+.col-md-2 .nav-link:focus {
+  color: #fff;            /* white on hover/focus */
+  text-decoration: none;
+}
+
+/* Optional: slightly larger clickable target for icons+text */
+.col-md-2 .nav-link i {
+  margin-right: 8px;
+}
+
+/* ---------- Main content (col-md-10) ---------- */
+.col-md-10 {
+  padding: 1.5rem;       /* space inside content */
+  /* keep Bootstrap grid width, but make it at least full height */
+  min-height: 100vh;
+  background-color: whitesmoke;
+  color: gray;
+  font-size: 20px;
+}
+
+/* ---------- Headings & images ---------- */
 h2 {
   font-family: Georgia, serif;
-  font-size: 60px;
+  font-size: 36px; /* reduced from 60 so nav doesn't inherit huge size */
   color: black;
+  margin-top: 0;
 }
 
-.col-md-2 {
-    background-color: black;
-    font-family: Georgia, serif;
-    font-size: 60px;
-    color: white;
-    min-height: auto;
+/* Image niceties (use class .img-fluid from Bootstrap) */
+img.rounded-circle {
+  max-width: 250px;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
 }
 
-.nav.flex-column .nav-link {
-    color: darkgrey;
-    text-decoration: none;
-}
-
-.nav.flex-column .nav-link:hover,
-.nav.flex-column .nav-link:visited {
-    color: white;
-}
-
-
-.col-md-10{
-    background-color: whitesmoke;
-    font-family: Verdana, sans-serif;
-    font-size: 20px;
-    color: gray;  
-    min-height: auto;
-}
+/* Utility: keep hidden/shown sections */
+.content-section { display: none; }
+.content-section.active { display: block; }
