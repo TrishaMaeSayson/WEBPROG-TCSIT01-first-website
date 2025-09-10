@@ -35,7 +35,7 @@ body {
   object-fit: cover;    /* keeps image proportioned */
 }
 
-.home-text {
+#home-text {
   text-align: left;
   display: flex;
   flex-direction: column;
@@ -43,7 +43,7 @@ body {
   height: 100%;
 }
 
-.home-image {
+#home-image {
   max-width: 300px;
   border: 5px solid black;
   border-radius: 10px;
