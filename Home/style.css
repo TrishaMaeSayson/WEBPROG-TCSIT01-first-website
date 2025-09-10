@@ -7,13 +7,6 @@ h2 {
   color: black;
 }
 
-body {
-  background-color: whitesmoke;
-  font-family: Verdana, sans-serif;
-  font-size: 20;
-  color: gray;  
-}
-
 .col-md-2 {
     background-color: black;
     color:white;
@@ -29,4 +22,11 @@ body {
 
 .nav.flex-column .nav-link:hover {
     color: white;
+}
+
+.col-md-10{
+    background-color: whitesmoke;
+    font-family: Verdana, sans-serif;
+    font-size: 20;
+    color: gray;  
 }
