@@ -28,8 +28,7 @@ body {
 .col-md-10 {
   padding: 1.5rem;       
   font-size: 20px;
-  position: relative;
-  min-height: 50vh;     
+  position: relative;  
   background-image: url('images/selfie2.jpg');
   background-size: cover; 
   background-position: center;
