@@ -35,22 +35,6 @@ body {
   object-fit: cover;    /* keeps image proportioned */
 }
 
-#home-text {
-  text-align: left;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: 100%;
-}
-
-#home-image {
-  max-width: 300px;
-  border: 5px solid black;
-  border-radius: 10px;
-  object-fit: cover;
-  height: auto;
-}
-
 h2 {
   font-family: Georgia, serif;
   font-size: 36px;
