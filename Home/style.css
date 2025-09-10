@@ -25,6 +25,18 @@ body {
   font-size: 18px;        
 }
 
+.profile-pic {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;  /* makes circle */
+  object-fit: cover;    /* keeps image proportioned */
+}
+
+.social-icons a {
+  color: white;
+  margin: 0 5px;
+}
+
 #home{
     background-image: url('images/selfie2.jpg');
     min-height: 100vh;   
