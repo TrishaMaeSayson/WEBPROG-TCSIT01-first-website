@@ -27,6 +27,9 @@ body {
 
 #home{
     background-image: url('images/selfie2.jpg');
+    min-height: 100vh;   
+    color:#000;
+    text-align: center;
 }
 
 h2 {
