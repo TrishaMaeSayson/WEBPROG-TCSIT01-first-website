@@ -51,9 +51,9 @@ body {
 }
 
 #home img.profile-pic {
-    max-width: 550px;
-    border: 5px solid gray;
-    border-radius: 10px;
+    max-width: 100px;
+    border: 50px solid gray;
+    border-radius: 100px;
 }
 
 h2 {
