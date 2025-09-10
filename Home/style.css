@@ -1,2 +1,31 @@
     .content-section { display: none; } 
     .content-section.active { display: block; } 
+
+h2 {
+  font-family: Georgia, serif;
+  font-size: 60;
+  color: black;
+}
+body {
+  background-color: black;
+  font-family: Verdana, sans-serif;
+  font-size: 16;
+  color: gray;  
+}
+
+.col-md-2 {
+    background-color: black;
+    color:white;
+    padding-top: 50;
+    padding-right: 30;
+    padding-bottom: 50;
+    padding-left: 80;
+}
+
+.nav.flex-column .nav-link {
+    color:darkgrey;
+}
+
+.nav.flex-column .nav-link:hover {
+    color: white;
+}
