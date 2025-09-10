@@ -18,41 +18,11 @@ body {
   min-height: 100vh;      
 }
 
-.col-md-2 .nav {
-  margin: 0;
-  padding: 0;
-}
-
 .col-md-2 .nav-item {
   margin-bottom:auto;
-  color: darkgray;        /* normal color */
-  padding: 0.45rem 0;     /* vertical spacing for each link */
-  font-size: 18px;        /* reasonable nav font size */
-}
-
-/* link states: link, visited, hover/focus (LVHA order recommended) */
-.col-md-2 .nav-link {
-  display: block;
-  color: darkgray;        /* normal color */
-  text-decoration: none;  /* remove underline */
-  padding: 0.45rem 0;     /* vertical spacing for each link */
-  font-size: 18px;        /* reasonable nav font size */
-  transition: color 0.18s;
-}
-
-.col-md-2 .nav-link:visited {
-  color: darkgray;        /* keep visited same as normal */
-}
-
-.col-md-2 .nav-link:hover,
-.col-md-2 .nav-link:focus {
-  color: #fff;            /* white on hover/focus */
-  text-decoration: none;
-}
-
-/* Optional: slightly larger clickable target for icons+text */
-.col-md-2 .nav-link i {
-  margin-right: 8px;
+  color: darkgray;        
+  padding: 0.45rem 0;     
+  font-size: 18px;        
 }
 
 .col-md-10 {
@@ -69,7 +39,6 @@ h2 {
   color: black;
   margin-top: 0;
 }
-
 
 .content-section { display: none; }
 .content-section.active { display: block; }
