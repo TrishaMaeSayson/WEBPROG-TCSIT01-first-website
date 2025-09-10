@@ -29,7 +29,7 @@ body {
   color: #fff;
   padding: 1.25rem;      
   min-height: 25vh;      
-  width: 120px;
+  width: 150px;
   height: 120px;
   border-radius: 50%;  /* makes circle */
   object-fit: cover;    /* keeps image proportioned */
@@ -37,16 +37,15 @@ body {
 
 #home{
     position: relative;
-    min-height: 100vh;       /* full height of screen */
+    min-height: 50vh;    
     background-image: url('images/selfie.jpg');
     background-size: cover;   /* fills the div */
-    background-position: center;
+    background-position: right;
     background-repeat: no-repeat;
-    color: white;
     display: flex;
     flex-direction: column;
     justify-content: center;  /* vertical center */
-    align-items: center;      /* horizontal center */
+    align-items: left;      /* horizontal center */
     text-shadow: 1px 1px 4px rgba(0,0,0,0.7); /* makes text readable */
 }
 
