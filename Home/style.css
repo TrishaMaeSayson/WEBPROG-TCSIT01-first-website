@@ -1,4 +1,3 @@
-/* reset box-sizing and remove browser body margin */
 * { box-sizing: border-box; }
 body {
   margin: 0;                    
@@ -7,23 +6,18 @@ body {
   color: #666;
 }
 
-/* Optional: remove container padding so the row touches the edges */
 .container-fluid {
   padding-left: 0;
   padding-right: 0;
 }
 
-/* ---------- Sidebar (col-md-2) ---------- */
-/* If you later add a .sidebar class to HTML, replace `.col-md-2` with `.sidebar` here */
 .col-md-2 {
-  background-color: #000; /* black sidebar */
+  background-color: #000;
   color: #fff;
-  padding: 1.25rem;       /* 20px padding inside sidebar */
-  min-height: 100vh;      /* full viewport height */
-  /* do NOT set width here (Bootstrap handles column width) */
+  padding: 1.25rem;      
+  min-height: 100vh;      
 }
 
-/* Nav link appearance and spacing inside sidebar */
 .col-md-2 .nav {
   margin: 0;
   padding: 0;
@@ -32,7 +26,6 @@ body {
 .col-md-2 .nav-item {
   margin-bottom:auto;
   color: darkgray;        /* normal color */
-  text-decoration: none;  /* remove underline */
   padding: 0.45rem 0;     /* vertical spacing for each link */
   font-size: 18px;        /* reasonable nav font size */
 }
@@ -62,17 +55,14 @@ body {
   margin-right: 8px;
 }
 
-/* ---------- Main content (col-md-10) ---------- */
 .col-md-10 {
-  padding: 1.5rem;       /* space inside content */
-  /* keep Bootstrap grid width, but make it at least full height */
+  padding: 1.5rem;       
   min-height: 100vh;
   background-color: whitesmoke;
   color: gray;
   font-size: 20px;
 }
 
-/* ---------- Headings & images ---------- */
 h2 {
   font-family: Georgia, serif;
   font-size: 36px;
@@ -80,14 +70,6 @@ h2 {
   margin-top: 0;
 }
 
-img {
-  max-width: 250px;
-  height: auto;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-}
 
 .content-section { display: none; }
 .content-section.active { display: block; }
