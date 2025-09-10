@@ -1,8 +1,8 @@
 /* reset box-sizing and remove browser body margin */
 * { box-sizing: border-box; }
 body {
-  margin: 0;                     /* remove white gap at edges */
-  background-color: whitesmoke;  /* page background */
+  margin: 0;                    
+  background-color: whitesmoke; 
   font-family: Verdana, sans-serif;
   color: #666;
 }
@@ -30,7 +30,11 @@ body {
 }
 
 .col-md-2 .nav-item {
-  margin-bottom: 0.35rem; /* gap between items */
+  margin-bottom:auto;
+  color: darkgray;        /* normal color */
+  text-decoration: none;  /* remove underline */
+  padding: 0.45rem 0;     /* vertical spacing for each link */
+  font-size: 18px;        /* reasonable nav font size */
 }
 
 /* link states: link, visited, hover/focus (LVHA order recommended) */
@@ -71,13 +75,12 @@ body {
 /* ---------- Headings & images ---------- */
 h2 {
   font-family: Georgia, serif;
-  font-size: 36px; /* reduced from 60 so nav doesn't inherit huge size */
+  font-size: 36px;
   color: black;
   margin-top: 0;
 }
 
-/* Image niceties (use class .img-fluid from Bootstrap) */
-img.rounded-circle {
+img {
   max-width: 250px;
   height: auto;
   display: block;
@@ -86,6 +89,5 @@ img.rounded-circle {
   box-shadow: 0 4px 8px rgba(0,0,0,0.15);
 }
 
-/* Utility: keep hidden/shown sections */
 .content-section { display: none; }
 .content-section.active { display: block; }
