@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <title>Trisha's Profile Website</title>
   <meta charset="utf-8">
@@ -9,46 +9,60 @@
 </head>
 
 <body>
-  <div class="row g-0">
-    <div class="col-md-2 bg-dark text-white p-3 min-vh-100">
-      <ul class="nav flex-column">
-        <li class="nav-item"><a href="#" class="nav-link text-white" onclick="showSection('home')">Home</a></li>
-        <li class="nav-item"><a href="#" class="nav-link text-white" onclick="showSection('about')">About</a></li>
-        <li class="nav-item"><a href="#" class="nav-link text-white" onclick="showSection('school')">Education</a></li>
-        <li class="nav-item"><a href="#" class="nav-link text-white" onclick="showSection('achievement')">Achievements</a></li>
-        <li class="nav-item"><a href="#" class="nav-link text-white" onclick="showSection('contact')">Contact</a></li>
-        <li class="nav-item"><a href="resources.html" class="nav-link text-white">Resources</a></li>
-      </ul>
-    </div>
-
-    <div class="col-md-10 p-4">
-      <div id="home" class="content-section active">
-        <h2>Trisha Mae Sayson</h2>
-        <img src="../images/selfie.jpg" alt="Trisha's Selfie">
+  <div class="container-fluid">
+    <div class="row g-0">
+      
+      <!-- Sidebar -->
+      <div class="col-md-2 bg-dark text-white p-3 min-vh-100">
+        <ul class="nav flex-column">
+          <li class="nav-item"><a href="#" class="nav-link text-white" onclick="showSection('home')">Home</a></li>
+          <li class="nav-item"><a href="#" class="nav-link text-white" onclick="showSection('about')">About</a></li>
+          <li class="nav-item"><a href="#" class="nav-link text-white" onclick="showSection('school')">Education</a></li>
+          <li class="nav-item"><a href="#" class="nav-link text-white" onclick="showSection('achievement')">Achievements</a></li>
+          <li class="nav-item"><a href="#" class="nav-link text-white" onclick="showSection('contact')">Contact</a></li>
+          <li class="nav-item"><a href="resources.html" class="nav-link text-white">Resources</a></li>
+        </ul>
       </div>
-
-      <div id="about" class="content-section">
-        <h2>About Me</h2>
-        <p>Hi, I’m Trish, a returning student from San Mateo, Rizal, currently pursuing an Associate in Computer Technology at Asia Pacific College.</p>
-        <p>I enjoy a wide range of hobbies, including playing the piano, singing, drawing both realistic portraits and anime characters, watching anime, reading manga, manhwa, and fanfiction, as well as playing badminton.</p>
-        <p>I’m proud of being self-aware and dedicated to personal growth. My goal is to further discover different aspects of myself while working toward a future role in the field of data.</p>
-        <p>This website is part of my WEBPROG course requirement</p>
-        <p>Full Name: Trisha Mae Verdeflor Sayson</p>
-        <p>Birthday: March 10, 1999 </p>
-        <p>Age: 26</p>
-        <p>Address: 65 Rafaela 1 Ampid 1, San Mateo, Rizal</p>
-      </div>
-
-      <div id="school" class="content-section">
-        <h2>Education</h2>
-      </div>
-
-      <div id="achievement" class="content-section">
-        <h2>Achievements</h2>
-      </div>
-
-      <div id="contact" class="content-section">
-        <h2>Contact</h2>
+      
+      <!-- Main Content -->
+      <div class="col-md-10 p-4">
+        <div class="row">
+          
+          <!-- Home Section -->
+          <div id="home" class="content-section active col-12">
+            <h2>Trisha Mae Sayson</h2>
+            <img src="../images/selfie.jpg" alt="Trisha's Selfie" class="img-fluid rounded-circle mt-3" style="max-width: 250px;">
+          </div>
+          
+          <!-- About Section -->
+          <div id="about" class="content-section col-12">
+            <h2>About Me</h2>
+            <p>Hi, I’m Trish, a returning student from San Mateo, Rizal, currently pursuing an Associate in Computer Technology at Asia Pacific College.</p>
+            <p>I enjoy a wide range of hobbies, including playing the piano, singing, drawing both realistic portraits and anime characters, watching anime, reading manga, manhwa, and fanfiction, as well as playing badminton.</p>
+            <p>I’m proud of being self-aware and dedicated to personal growth. My goal is to further discover different aspects of myself while working toward a future role in the field of data.</p>
+            <p>This website is part of my WEBPROG course requirement.</p>
+            <p><strong>Full Name:</strong> Trisha Mae Verdeflor Sayson</p>
+            <p><strong>Birthday:</strong> March 10, 1999</p>
+            <p><strong>Age:</strong> 26</p>
+            <p><strong>Address:</strong> 65 Rafaela 1 Ampid 1, San Mateo, Rizal</p>
+          </div>
+          
+          <!-- Education Section -->
+          <div id="school" class="content-section col-12">
+            <h2>Education</h2>
+          </div>
+          
+          <!-- Achievements Section -->
+          <div id="achievement" class="content-section col-12">
+            <h2>Achievements</h2>
+          </div>
+          
+          <!-- Contact Section -->
+          <div id="contact" class="content-section col-12">
+            <h2>Contact</h2>
+          </div>
+          
+        </div>
       </div>
     </div>
   </div>
