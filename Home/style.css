@@ -25,20 +25,8 @@ body {
   font-size: 18px;        
 }
 
-.col-md-10 {
-  padding: 1.5rem;       
-  font-size: 20px;
-  position: relative;  
-  background-image: url('images/selfie2.jpg');
-  background-size: cover; 
-  background-position: center;
-  background-repeat: no-repeat;
-  color: black;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;  
-  align-items: center;      
-  text-shadow: 1px 1px 4px rgba(0,0,0,0.7); 
+#home{
+    background-image: url('images/selfie2.jpg');
 }
 
 h2 {
