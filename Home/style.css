@@ -35,28 +35,26 @@ body {
 }
 
 #home {
-    display: flex;                /* align children in a row */
-    justify-content: space-between; /* text left, image right */
-    align-items: center;          /* vertical centering */
-    height: 80vh;                 /* occupy most of screen height */
+    display: flex;                
+    justify-content: space-between; 
+    align-items: center;          
+    height: 80vh;                 
     padding: 20px;
 }
 
 .home-text {
     display: flex;
-    flex-direction: column;       /* stack h2 above p */
-    justify-content: center;      /* center text vertically inside its div */
+    flex-direction: column;       
+    justify-content: center;      
     max-width: 50%;
 }
 
 #home img.profile-pic {
-    max-width: 50vh;
-    padding: 1.25rem;      
-    min-height: 50vh;      
-    width: 150px;
-    height: 120px;
-    border-radius: 50%; 
-    object-fit: cover;
+    width: 200px;             
+    height: 200px;            
+    border-radius: 50%;       
+    object-fit: cover;        
+    border: 5px solid gray;
 }
 
 h2 {
