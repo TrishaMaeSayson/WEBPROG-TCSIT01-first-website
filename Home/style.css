@@ -51,7 +51,7 @@ body {
 
 #home img.profile-pic {
     width: 500px;             
-    height: 500px;            
+    height: auto;            
     border-radius: 50%;       
     object-fit: cover;        
     border: 5px solid gray;
