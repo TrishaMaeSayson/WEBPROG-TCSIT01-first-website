@@ -67,9 +67,9 @@ h2 {
 }
 
 .content-section { 
-  display: none !important; 
+  display: none; 
 }
 
 .content-section.active { 
-  display: block !important; 
+  display: block; 
 }
