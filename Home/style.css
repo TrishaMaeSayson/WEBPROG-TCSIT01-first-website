@@ -1,62 +1,62 @@
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
+
 body {
-  margin: 0;                    
-  background-color: whitesmoke; 
+  margin: 0;
+  background-color: whitesmoke;
   font-family: Verdana, sans-serif;
   color: #666;
 }
 
-.container-fluid {
-  padding-left: 0;
-  padding-right: 0;
-}
-
+/* Sidebar */
 .col-md-2 {
   background-color: #000;
   color: #fff;
-  padding: 1.25rem;      
-  min-height: 100vh;      
+  padding: 1.25rem;
+  min-height: 100vh;
 }
 
 .col-md-2 .nav-item {
-  margin-bottom:auto;
-  color: darkgray;        
-  padding: 0.45rem 0;     
-  font-size: 18px;        
+  margin-bottom: auto;
+  color: darkgray;
+  padding: 0.45rem 0;
+  font-size: 18px;
 }
 
+/* Generic profile pic (sidebar) */
 .profile-pic {
-  padding: 1.25rem;      
-  min-height: 25vh;      
   width: 150px;
-  height: 120px;
-  border-radius: 50%; 
-  object-fit: cover;   
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
+/* Home section */
 #home {
-    display: flex;                
-    justify-content: space-between; 
-    align-items: center;          
-    height: 80vh;                 
-    padding: 20px;
+  display: flex;                  /* side by side */
+  justify-content: space-between; /* text left, image right */
+  align-items: center;            /* vertically centered */
+  height: 80vh;
+  padding: 20px;
 }
 
 .home-text {
-    display: flex;
-    flex-direction: column;       
-    justify-content: center;      
-    max-width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 50%;
 }
 
 #home img.profile-pic {
-    width: 350px;             
-    height: auto;            
-    border-radius: 50%;       
-    object-fit: cover;        
-    border: 5px solid gray;
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid gray;
 }
 
+/* Headings */
 h2 {
   font-family: Georgia, serif;
   font-size: 36px;
@@ -64,10 +64,14 @@ h2 {
   margin-top: 0;
 }
 
-.content-section { 
-  display: none !important; 
+/* Section toggling */
+.content-section {
+  display: none; /* hidden by default */
 }
 
-.content-section.active { 
-  display: block !important; 
+.content-section.active {
+  display: flex; /* flex by default so you can center/stack easily */
+  flex-direction: column;
+  justify-content: center;
+  height: 80vh;
 }
