@@ -37,11 +37,15 @@ body {
 }
 
 #home {
-    display: flex;                
-    justify-content: space-between; 
-    align-items: center;          
-    height: 80vh;                 
-    padding: 20px;
+  display: none; /* hidden by default */
+}
+
+#home.active {
+  display: flex;                /* only flex when active */
+  justify-content: space-between;
+  align-items: center;
+  height: 80vh;
+  padding: 20px;
 }
 
 .home-text {
