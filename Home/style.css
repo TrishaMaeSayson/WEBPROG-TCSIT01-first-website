@@ -63,6 +63,22 @@ body {
     border: 5px solid gray;
 }
 
+.about-table {
+  background: white;
+  width: 100%;
+}
+
+.about-logo {
+  width: 100px;      /* adjust size */
+  height: auto;
+  margin: 10px;
+  transition: transform 0.2s;
+}
+
+.about-logo:hover {
+  transform: scale(1.1); /* little zoom on hover */
+}
+
 h2 {
   font-family: Georgia, serif;
   font-size: 36px;
