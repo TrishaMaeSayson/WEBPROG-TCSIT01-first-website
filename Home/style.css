@@ -85,19 +85,44 @@ p {
   justify-content: space-between;
   align-items: flex-start;
   gap: 2rem;
+  flex-wrap: wrap;
 }
 
-/* Left: Links */
-.about-links {
+/* LEFT SIDE: Table + Links stacked */
+.about-left {
   flex: 1;
-  text-align: left;
-  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column; /* stack vertically */
+  align-items: flex-start;
+}
+
+/* TABLE styling */
+.about-info {
+  width: 100%;
+}
+
+.about-info table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 10px; /* spacing between rows */
+}
+
+.about-info td {
+  padding: 5px 10px;
+  vertical-align: top;
+}
+
+/* LINKS styling (under the table) */
+.about-links {
+  display: flex;
+  flex-direction: column; /* stack logos vertically */
+  gap: 8px; /* smaller space between logos */
+  margin-top: 20px; /* space between table and logos */
 }
 
 .about-links a {
   display: flex;
   align-items: center;
-  margin-bottom: 15px; /* space between logos */
   text-decoration: none;
   color: #333;
   font-size: 16px;
@@ -107,27 +132,22 @@ p {
   color: #007bff;
 }
 
+/* LOGO styling */
 .about-logo {
-  width: 200px;
-  height: 200px;
-  margin-right: 5px;
+  width: 120px;
+  height: auto;
   object-fit: contain;
+  border-radius: 8px;
+  transition: transform 0.2s ease-in-out;
 }
 
-/* Right: Table */
-.about-info {
+.about-logo:hover {
+  transform: scale(1.05);
+}
+
+/* RIGHT SIDE placeholder (for photo gallery later) */
+.about-right {
   flex: 1;
-}
-
-.about-info table {
-  width: 100%;
-  border-collapse: separate;
-  border-spacing: 0 10px; /* adds space between rows */
-}
-
-.about-info td {
-  padding: 5px 10px;
-  vertical-align: top;
 }
 
 .content-section { 
