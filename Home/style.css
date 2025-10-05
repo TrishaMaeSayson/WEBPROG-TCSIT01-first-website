@@ -28,6 +28,19 @@ body {
   font-size: 18px;        
 }
 
+h2 {
+  margin-bottom: 1.5rem; /* space between header and first paragraph */
+  font-family: Georgia, serif;
+  font-size: 36px;
+  color: black;
+  margin-top: 0;
+}
+
+p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
 .profile-pic { 
   min-height: 25vh;     
   width: 150px;
@@ -67,22 +80,20 @@ body {
   padding: 40px 20px; /* adds spacing around section */
 }
 
-#about h2 {
-  margin-bottom: 1.5rem; /* space between header and first paragraph */
-}
-
 .about-content {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   margin-top: 30px; /* space between paragraphs and the content below */
   flex-wrap: wrap;
+  gap: 2rem;
 }
 
 /* Left: Links */
 .about-links {
   flex: 1;
   text-align: left;
+  margin-top: 1.5rem;
 }
 
 .about-links a {
@@ -99,10 +110,9 @@ body {
 }
 
 .about-logo {
-  width: 40px;
-  height: 40px;
+  width: 100px;
+  height: 100px;
   margin-right: 10px;
-  border-radius: 5px;
   object-fit: contain;
 }
 
@@ -120,13 +130,6 @@ body {
 .about-info td {
   padding: 5px 10px;
   vertical-align: top;
-}
-
-h2 {
-  font-family: Georgia, serif;
-  font-size: 36px;
-  color: black;
-  margin-top: 0;
 }
 
 .content-section { 
