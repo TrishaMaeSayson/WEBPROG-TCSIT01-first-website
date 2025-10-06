@@ -96,18 +96,20 @@
                       <img src="images/selfie.jpg" class="profile-pic" alt="Profile">
                   </div>
 
-                  <div class="music-visualizer">
-                      <span></span><span></span><span></span><span></span><span></span>
-                      <span></span><span></span><span></span><span></span><span></span>
-                      <span></span><span></span><span></span><span></span><span></span>
-                      <span></span><span></span><span></span><span></span><span></span>
+                  <div class="music-controls" role="region" aria-label="Audio controls">
+                    <button id="aboutPlayBtn" class="play-btn" aria-pressed="false" aria-label="Play/Pause">
+                      <i class="fas fa-play" aria-hidden="true"></i>
+                    </button>
+                  
+                    <div class="music-visualizer" aria-hidden="true">
+                        <span></span><span></span><span></span><span></span><span></span>
+                        <span></span><span></span><span></span><span></span><span></span>
+                        <span></span><span></span><span></span><span></span><span></span>
+                        <span></span><span></span><span></span><span></span><span></span>
+                    </div>
                   </div>
 
-                  <button id="aboutPlayBtn" class="play-btn">
-                    <i class="fas fa-play"></i>
-                  </button>
-
-                  <audio id="piano" src="music.ogg"></audio>
+                  <audio id="piano" src="music.ogg" preload="metadata"></audio>
                 </div>
               </div>
             </div>
