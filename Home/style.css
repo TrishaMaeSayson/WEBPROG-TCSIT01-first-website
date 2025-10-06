@@ -141,8 +141,7 @@ p {
   border-radius: 8px;
   transition: transform 0.2s ease-in-out;
   display: block;
-  margin: 20px auto;
-  padding-left: 60px;
+  margin: 20px auto 20px 40px;
 }
 
 .about-logo:hover {
