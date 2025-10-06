@@ -45,7 +45,7 @@ p {
   min-height: 25vh;     
   width: 150px;
   height: 120px;
-  border-radius: 50%; 
+  border-radius: 12%; 
   object-fit: cover;   
 }
 
@@ -95,18 +95,18 @@ p {
 /* Top-left corner */
 #home .photo-frame::before {
   bottom: -35px;
-  right: -35px;
+  left: -35px;
   border-top: none;
-  border-left: none;
+  border-right: none;
   transform: rotate(0deg);
 }
 
 /* Bottom-right corner */
 #home .photo-frame::after {
   top: -35px;
-  left: -35px;
+  right: -35px;
   border-bottom: none;
-  border-right: none;
+  border-left: none;
   transform: rotate(0deg);
 }
 
@@ -188,7 +188,7 @@ p {
   align-items: center;       /* center all items horizontally */
   justify-content: flex-start;
   gap: 1rem;
-  padding-top: 20px;          /* adjust to align top of photo with table */
+  padding-top: 0px;          /* adjust to align top of photo with table */
 }
 
 /* Album cover photo */
@@ -203,7 +203,7 @@ p {
 /* Transparent Visualizer */
 .music-visualizer {
   width: 250px;
-  height: 60px;
+  height: 15px;
   display: flex;
   justify-content: center;
   align-items: flex-end;
