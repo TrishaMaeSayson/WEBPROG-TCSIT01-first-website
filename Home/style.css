@@ -76,10 +76,6 @@ p {
     border: 5px solid gray;
 }
 
-#about {
-  padding: 40px 20px; /* adds spacing around section */
-}
-
 .about-content {
   display: flex;
   justify-content: space-between;
@@ -150,7 +146,8 @@ p {
   flex: 1;
 }
 
-.content-section { 
+.content-section:not(#home) {
+  padding: 40px 20px;
   display: none; 
 }
 
