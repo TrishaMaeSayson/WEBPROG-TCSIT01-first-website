@@ -76,6 +76,10 @@ p {
     border: 5px solid gray;
 }
 
+#about p{
+  text-indent: 50px;
+}
+
 .about-content {
   display: flex;
   justify-content: space-between;
@@ -144,6 +148,10 @@ p {
 /* RIGHT SIDE placeholder (for photo gallery later) */
 .about-right {
   flex: 1;
+}
+
+#school p:not(:has(strong)){
+  text-indent: 50px;
 }
 
 .content-section:not(#home) {
