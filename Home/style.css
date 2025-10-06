@@ -4,9 +4,8 @@
 
 body {
   margin: 0;                    
-  background-color: whitesmoke; 
-  font-family: Verdana, sans-serif;
-  color: #666;
+  background-color: #FFFFFF; 
+  font-family: KoHo;
 }
 
 .container-fluid {
@@ -25,13 +24,19 @@ body {
   margin-bottom:auto;
   color: darkgray;        
   padding: 0.45rem 0;     
-  font-size: 18px;        
+  font-size: 20px;        
+}
+
+h1{
+  margin-top: 1rem;
+  font-family: Leckerli One;
+  font-size: 48px;
 }
 
 h2 {
   margin-bottom: 1.5rem; /* space between header and first paragraph */
-  font-family: Georgia, serif;
-  font-size: 36px;
+  font-family: Lazelar;
+  font-size: 64px;
   color: black;
   margin-top: 0;
 }
@@ -74,7 +79,7 @@ p {
     border-radius: 12px;       
     object-fit: cover;        
     position: relative;
-    z-index: 1;
+    z-index: 2;
 }
 
 #home .photo-frame {
@@ -82,32 +87,49 @@ p {
   display: inline-block;
 }
 
-#home .photo-frame::before,
-#home .photo-frame::after {
-  content: "";
+/* Container for background rectangles */
+.photo-background {
   position: absolute;
-  width: 80px;  /* length of angled border */
-  height: 80px;
-  border: 5px solid rgb(115, 100, 138);
-  z-index: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1; /* behind photo */
 }
 
-/* Top-left corner */
-#home .photo-frame::before {
-  bottom: -35px;
-  left: -35px;
-  border-top: none;
-  border-right: none;
-  transform: rotate(0deg);
+/* Base style for all rectangles */
+.photo-background .rect {
+  position: absolute;
+  border-radius: 8px;
+  opacity: 0.9;
 }
 
-/* Bottom-right corner */
-#home .photo-frame::after {
-  top: -35px;
-  right: -35px;
-  border-bottom: none;
-  border-left: none;
-  transform: rotate(0deg);
+/* Uneven overlapping rectangles (customize colors + positions) */
+.rect1 {
+  width: 80%;
+  height: 80%;
+  top: -20px;
+  right: -40px;
+  background-color: #73648a; /* change to your color */
+  transform: rotate(-3deg);
+}
+
+.rect2 {
+  width: 70%;
+  height: 70%;
+  top: 30px;
+  right: -20px;
+  background-color: #9882ac; /* change to your color */
+  transform: rotate(4deg);
+}
+
+.rect3 {
+  width: 60%;
+  height: 60%;
+  top: 60px;
+  right: 10px;
+  background-color: #a393bf; /* change to your color */
+  transform: rotate(-2deg);
 }
 
 #about p{
@@ -160,7 +182,7 @@ p {
 .about-logo {
   width: 160px;               /* consistent box width */
   height: 120px;              /* consistent box height */
-  background-color: rgb(115, 100, 138);     /* background for transparent logos */
+  background-color: #73648a;     /* background for transparent logos */
   border-radius: 12px;
   display: flex;              /* center logo inside the box */
   justify-content: center;
@@ -198,14 +220,14 @@ p {
   border-radius: 12px;
   object-fit: cover;
   border: 4px solid rgb(115, 100, 138);
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 /* Container that holds visualizer + play button side by side */
 .music-controls {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 15px; /* 👈 space between play button and visualizer */
 }
 
@@ -226,7 +248,7 @@ p {
   height: 15px;
   background: rgb(152, 130, 172);
   border-radius: 2px;
-  animation: bounce 1s ease-in-out infinite;
+  transform-origin: bottom;
 }
 
 @keyframes bounce {
@@ -251,7 +273,7 @@ p {
 }
 
 .play-btn:hover {
-  background-color: rgb(115, 100, 138);
+  background-color: #73648a;
   transform: scale(1.1);
 }
 
