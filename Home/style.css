@@ -73,7 +73,7 @@ p {
     height: auto;            
     border-radius: 50%;       
     object-fit: cover;        
-    border: 5px solid gray;
+    border: 5px solid rgb(115, 100, 138);
 }
 
 #about p{
@@ -129,10 +129,6 @@ p {
   font-size: 16px;
 }
 
-.about-links a:hover {
-  color: #007bff;
-}
-
 /* LOGO styling */
 .about-logo {
   width: 250px;
@@ -166,7 +162,7 @@ p {
   height: 250px;
   border-radius: 12px;
   object-fit: cover;
-  border: 4px solid #000;
+  border: 4px solid rgb(115, 100, 138);
 }
 
 /* Transparent Visualizer */
@@ -184,7 +180,7 @@ p {
 .music-visualizer span {
   width: 6px;
   height: 15px;
-  background: #007bff;
+  background: rgb(152, 130, 172);
   border-radius: 2px;
   animation: bounce 1s ease-in-out infinite;
 }
@@ -232,7 +228,7 @@ p {
 }
 
 .play-btn:hover {
-  background-color: #007bff;
+  background-color: rgb(115, 100, 138);
   transform: scale(1.1);
 }
 
