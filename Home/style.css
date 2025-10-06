@@ -69,7 +69,7 @@ p {
 }
 
 #home img.profile-pic {
-    width: 350px;             
+    width: 250px;             
     height: auto;            
     border-radius: 12px;       
     object-fit: cover;        
@@ -165,8 +165,8 @@ p {
 
 /* LOGO styling */
 .about-logo {
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
   object-fit: contain;
   border-radius: 12px;
   transition: transform 0.2s ease-in-out;
