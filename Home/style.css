@@ -71,9 +71,43 @@ p {
 #home img.profile-pic {
     width: 350px;             
     height: auto;            
-    border-radius: 50%;       
+    border-radius: 12px;       
     object-fit: cover;        
-    border: 5px solid rgb(115, 100, 138);
+    position: relative;
+    z-index: 1;
+}
+
+#home .photo-frame {
+  position: relative;
+  display: inline-block;
+}
+
+#home .photo-frame::before,
+#home .photo-frame::after {
+  content: "";
+  position: absolute;
+  width: 80px;  /* length of angled border */
+  height: 80px;
+  border: 3px solid rgb(115, 100, 138);
+  z-index: 0;
+}
+
+/* Top-left corner */
+#home .photo-frame::before {
+  top: -15px;
+  left: -15px;
+  border-bottom: none;
+  border-right: none;
+  transform: rotate(0deg);
+}
+
+/* Bottom-right corner */
+#home .photo-frame::after {
+  bottom: -15px;
+  right: -15px;
+  border-top: none;
+  border-left: none;
+  transform: rotate(0deg);
 }
 
 #about p{
@@ -116,8 +150,8 @@ p {
 /* LINKS styling (under the table) */
 .about-links {
   display: flex;
-  flex-direction: column; /* stack logos vertically */
-  gap: 8px; /* smaller space between logos */
+  flex-direction: row; /* stack logos vertically */
+  gap: 20px; /* smaller space between logos */
   margin-top: 20px; /* space between table and logos */
 }
 
@@ -131,7 +165,7 @@ p {
 
 /* LOGO styling */
 .about-logo {
-  width: 250px;
+  width: 100px;
   height: auto;
   object-fit: contain;
   border-radius: 8px;
