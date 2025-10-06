@@ -78,7 +78,7 @@ p {
 
 #about p{
   text-indent: 50px;
-  margin-bottom: 1rem;
+  margin-bottom: 5rem;
 }
 
 .about-content {
@@ -142,7 +142,7 @@ p {
   transition: transform 0.2s ease-in-out;
   display: block;
   margin: 20px auto;
-  padding-left: 30px;
+  padding-left: 50px;
 }
 
 .about-logo:hover {
