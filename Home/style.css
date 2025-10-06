@@ -5,7 +5,7 @@
 body {
   margin: 0;                    
   background-color: #FFFFFF; 
-  font-family: KoHo;
+  font-family: Verdana, sans-serif;
 }
 
 .container-fluid {
@@ -29,13 +29,13 @@ body {
 
 h1{
   margin-top: 1rem;
-  font-family: Leckerli One;
+  font-family: 'Abril Fatface', serif;
   font-size: 48px;
 }
 
 h2 {
   margin-bottom: 1.5rem; /* space between header and first paragraph */
-  font-family: Lazelar;
+  font-family: 'Abril Fatface', serif;
   font-size: 64px;
   color: black;
   margin-top: 0;
@@ -44,6 +44,11 @@ h2 {
 p {
   margin-bottom: 1rem;
   line-height: 1.6;
+}
+
+.highlight-name {
+  color:#73648a;
+  font-family: "Brush Script MT", cursive;
 }
 
 .profile-pic { 
@@ -100,36 +105,39 @@ p {
 /* Base style for all rectangles */
 .photo-background .rect {
   position: absolute;
-  border-radius: 8px;
-  opacity: 0.9;
+  border-radius: 12px;
+  opacity: 0.85;
+  z-index: 0;
 }
 
 /* Uneven overlapping rectangles (customize colors + positions) */
 .rect1 {
-  width: 80%;
-  height: 80%;
-  top: -20px;
-  right: -40px;
+  width: 120%;
+  height: 120%;
+  top: -40px;
+  right: -60px;
   background-color: #73648a; /* change to your color */
-  transform: rotate(-3deg);
+  transform: rotate(-4deg);
 }
 
 .rect2 {
-  width: 70%;
-  height: 70%;
-  top: 30px;
+  width: 110%;
+  height: 110%;
+  top: -10px;
   right: -20px;
   background-color: #9882ac; /* change to your color */
-  transform: rotate(4deg);
+  transform: rotate(3deg);
+  z-index: 0;
 }
 
 .rect3 {
-  width: 60%;
-  height: 60%;
-  top: 60px;
-  right: 10px;
+  width: 100%;
+  height: 100%;
+  top: 30px;
+  right: 0;
   background-color: #a393bf; /* change to your color */
   transform: rotate(-2deg);
+  z-index: 0;
 }
 
 #about p{
@@ -223,12 +231,22 @@ p {
   margin-bottom: 10px;
 }
 
-/* Container that holds visualizer + play button side by side */
+.music-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px; /* spacing between photo and controls */
+  position: relative;
+}
+
+/* Align play + visualizer perfectly with photo width */
 .music-controls {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  gap: 15px; /* 👈 space between play button and visualizer */
+  justify-content: center;
+  width: 250px; /* same as photo width */
+  gap: 12px;
 }
 
 /* Transparent Visualizer */

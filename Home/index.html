@@ -37,7 +37,7 @@
             <!-- Home -->
             <div id="home" class="content-section active">
               <div class="home-text text-start">
-                <h2>Hi I'm Trish and my favorite quote is</h2>
+                <h2>Hi, I'm <span class="highlight-name">Trish</span></h2>
                 <p>The only 3 things that you can control are your thoughts, feelings, and actions.</p>
               </div>
               <div class="photo-frame">
@@ -97,14 +97,15 @@
 
                 <!-- RIGHT SIDE (future gallery + sound icon) -->
                 <div class="about-right">
-                  <div class="music-art">
+                  <div class="music-container">
+                    <div class="music-art">
                       <img src="images/selfie.jpg" class="profile-pic" alt="Profile">
-                  </div>
+                    </div>
 
-                  <div class="music-controls" role="region" aria-label="Audio controls">
-                    <button id="aboutPlayBtn" class="play-btn" aria-pressed="false" aria-label="Play/Pause">
-                      <i class="fas fa-play" aria-hidden="true"></i>
-                    </button>
+                    <div class="music-controls" role="region" aria-label="Audio controls">
+                      <button id="aboutPlayBtn" class="play-btn" aria-pressed="false" aria-label="Play/Pause">
+                        <i class="fas fa-play" aria-hidden="true"></i>
+                      </button>
                   
                     <div class="music-visualizer" aria-hidden="true">
                         <span></span><span></span><span></span><span></span><span></span>
@@ -115,6 +116,8 @@
                   </div>
 
                   <audio id="piano" src="music.ogg" preload="metadata"></audio>
+                  </div>
+                  
                 </div>
               </div>
             </div>
