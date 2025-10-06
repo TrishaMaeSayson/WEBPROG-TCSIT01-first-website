@@ -8,11 +8,9 @@ function showSection(sectionId) {
   const btn = document.getElementById('aboutPlayBtn');
   const icon = btn.querySelector('i');
   const bars = document.querySelectorAll('.music-visualizer span');
-  const visualizer = document.querySelector('.music-visualizer');
 
-  if (!audio || !btn || bars.length === 0 || !visualizer) return;
+  if (!audio || !btn || bars.length === 0) return;
 
-  // Set up Web Audio API
   const ctx = new (window.AudioContext || window.webkitAudioContext)();
   const src = ctx.createMediaElementSource(audio);
   const analyser = ctx.createAnalyser();
@@ -35,44 +33,35 @@ function showSection(sectionId) {
 
   function resetBars() {
     cancelAnimationFrame(animationId);
-    bars.forEach(bar => {
-      bar.style.height = '8px';
-      bar.style.background = 'black';
-    });
+    bars.forEach(bar => bar.classList.remove('active'));
+    btn.classList.remove('playing');
   }
 
-  // Play/pause toggle
   btn.addEventListener('click', () => {
     if (audio.paused) {
       ctx.resume();
       audio.play().catch(err => console.warn('Play failed:', err));
       icon.classList.replace('fa-play', 'fa-pause');
       btn.setAttribute('aria-pressed', 'true');
-      visualizer.classList.add('playing');
 
-      // Start bar animation
+      bars.forEach(bar => bar.classList.add('active'));
+      btn.classList.add('playing');
       animateBars();
-
-      // Change bar colors dynamically when playing
-      bars.forEach((bar, i) => {
-        const hue = 260 + i * 5; // purple-ish range
-        bar.style.background = `hsl(${hue}, 30%, 60%)`;
-      });
 
     } else {
       audio.pause();
       icon.classList.replace('fa-pause', 'fa-play');
       btn.setAttribute('aria-pressed', 'false');
-      visualizer.classList.remove('playing');
       resetBars();
     }
   });
 
-  // Reset when audio ends
   audio.addEventListener('ended', () => {
     icon.classList.replace('fa-pause', 'fa-play');
     btn.setAttribute('aria-pressed', 'false');
-    visualizer.classList.remove('playing');
     resetBars();
   });
+
+  resetBars();
 })();
+

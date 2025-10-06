@@ -49,28 +49,28 @@ h2 {
 p {
   margin-bottom: 1rem;
   line-height: 1.6;
-  font-size: 20px;
+  font-size: 16px;
 }
 
 .highlight-name {
   color:#73648a;
-  font-family: 'Apple Chancery', cursive;
+  font-family: 'Brush Script MT', cursive;
   font-size: 70px;
 }
 
 .word-thoughts { 
   color: #73648a;
-  font-family: 'Apple Chancery', cursive; 
+  font-family: 'Brush Script MT', cursive; 
 }
 
 .word-feelings { 
   color: #9882ac;
-  font-family: 'Apple Chancery', cursive; 
+  font-family: 'Brush Script MT', cursive; 
 }
 
 .word-actions { 
   color: #a393bf;
-  font-family: 'Apple Chancery', cursive; 
+  font-family: 'Brush Script MT', cursive; 
 }
 
 .profile-pic { 
@@ -134,32 +134,36 @@ p {
 
 /* Uneven overlapping rectangles (customize colors + positions) */
 .rect1 {
-  width: 120%;
-  height: 120%;
-  top: -40px;
-  right: -60px;
-  background-color: #73648a; /* change to your color */
-  transform: rotate(-4deg);
+  width: 135%;
+  height: 135%;
+  top: -100px;       /* pushed higher */
+  right: -120px;     /* pushed further right */
+  background-color: #73648a;
+  transform: rotate(-5deg);
+  opacity: 0.6;      /* furthest, lightest */
+  z-index: 0;
 }
 
 .rect2 {
-  width: 110%;
-  height: 110%;
-  top: -10px;
-  right: -20px;
-  background-color: #9882ac; /* change to your color */
-  transform: rotate(3deg);
-  z-index: 0;
+  width: 120%;
+  height: 120%;
+  top: -20px;        /* mid layer */
+  right: -60px;
+  background-color: #9882ac;
+  transform: rotate(4deg);
+  opacity: 0.75;
+  z-index: 1;
 }
 
 .rect3 {
-  width: 100%;
-  height: 100%;
-  top: 30px;
-  right: 0;
-  background-color: #a393bf; /* change to your color */
-  transform: rotate(-2deg);
-  z-index: 0;
+  width: 105%;
+  height: 105%;
+  top: 80px;         /* pushed lower */
+  right: 10px;
+  background-color: #a393bf;
+  transform: rotate(-3deg);
+  opacity: 0.9;      /* closest, darker */
+  z-index: 2;
 }
 
 #about p{
@@ -291,9 +295,8 @@ p {
   transition: background 0.3s ease, height 0.3s ease;
 }
 
-.music-visualizer.playing span {
-  animation: bounce 1s ease-in-out infinite;
-  background: #a393bf; /* active color */
+.music-visualizer span.active {
+  background: #a393bf; /* or any accent color you want */
 }
 
 @keyframes bounce {
@@ -318,8 +321,12 @@ p {
 }
 
 .play-btn:hover {
-  background-color: #73648a;
+  background-color: #a393bf;
   transform: scale(1.1);
+}
+
+.play-btn.playing {
+  background-color: #a393bf; /* 💜 replace with your preferred color */
 }
 
 #school p:not(:has(strong)){
