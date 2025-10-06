@@ -78,7 +78,7 @@ p {
 
 #about p{
   text-indent: 50px;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 .about-content {
@@ -135,7 +135,7 @@ p {
 
 /* LOGO styling */
 .about-logo {
-  width: 300px;
+  width: 250px;
   height: auto;
   object-fit: contain;
   border-radius: 8px;
