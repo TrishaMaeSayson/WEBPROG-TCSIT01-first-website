@@ -148,7 +148,10 @@ p {
 
 .content-section:not(#home) {
   padding: 40px 20px;
-  display: none; 
+}
+
+.content-section {
+  display: none;
 }
 
 .content-section.active { 
