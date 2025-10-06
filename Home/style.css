@@ -69,7 +69,7 @@ p {
 }
 
 #home img.profile-pic {
-    width: 250px;             
+    width: 350px;             
     height: auto;            
     border-radius: 12px;       
     object-fit: cover;        
@@ -94,8 +94,8 @@ p {
 
 /* Top-left corner */
 #home .photo-frame::before {
-  top: -15px;
-  left: -15px;
+  top: -25px;
+  left: -25px;
   border-bottom: none;
   border-right: none;
   transform: rotate(0deg);
@@ -103,8 +103,8 @@ p {
 
 /* Bottom-right corner */
 #home .photo-frame::after {
-  bottom: -15px;
-  right: -15px;
+  bottom: -25px;
+  right: -25px;
   border-top: none;
   border-left: none;
   transform: rotate(0deg);
@@ -165,10 +165,10 @@ p {
 
 /* LOGO styling */
 .about-logo {
-  width: 150px;
-  height: 150px;
+  width: 125px;
+  height: 125px;
   object-fit: contain;
-  border-radius: 12px;
+  border-radius: 20px;
   transition: transform 0.2s ease-in-out;
   display: block;
   margin: 20px auto;
