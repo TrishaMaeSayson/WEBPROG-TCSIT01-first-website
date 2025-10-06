@@ -88,7 +88,7 @@ p {
   position: absolute;
   width: 80px;  /* length of angled border */
   height: 80px;
-  border: 3px solid rgb(115, 100, 138);
+  border: 5px solid rgb(115, 100, 138);
   z-index: 0;
 }
 
@@ -165,14 +165,13 @@ p {
 
 /* LOGO styling */
 .about-logo {
-  width: 100px;
-  height: auto;
+  width: 200px;
+  height: 200px;
   object-fit: contain;
-  border-radius: 8px;
+  border-radius: 12px;
   transition: transform 0.2s ease-in-out;
   display: block;
   margin: 20px auto;
-  padding-left: 60px;
 }
 
 .about-logo:hover {
