@@ -3,6 +3,29 @@ function showSection(sectionId) {
   document.getElementById(sectionId).classList.add('active');
 }
 
+document.addEventListener("DOMContentLoaded", function() {
+  const textElement = document.getElementById("typing-text");
+  const textContent = textElement.innerHTML; // include the spans
+  textElement.innerHTML = ""; // clear it first
+
+  let i = 0;
+  function typeEffect() {
+    if (i < textContent.length) {
+      textElement.innerHTML = textContent.substring(0, i + 1);
+      i++;
+      setTimeout(typeEffect, 50); // typing speed
+    } else {
+      setTimeout(() => {
+        i = 0;
+        textElement.innerHTML = "";
+        typeEffect();
+      }, 3000); // pause before repeating
+    }
+  }
+
+  typeEffect();
+});
+
 (function () {
   const audio = document.getElementById('piano');
   const btn = document.getElementById('aboutPlayBtn');
