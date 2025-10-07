@@ -4,32 +4,55 @@ function showSection(sectionId) {
 }
 
 document.addEventListener("DOMContentLoaded", function() {
-  const el = document.getElementById("typing-text");
-  const fullHTML = el.innerHTML.trim();   // Save formatted version
-  const tempDiv = document.createElement("div");
-  tempDiv.innerHTML = fullHTML;
-  const fullText = tempDiv.textContent || tempDiv.innerText;  // plain text only
+  const line = document.getElementById("typing-line");
 
-  let i = 0;
+  // Text blocks (supports HTML formatting)
+  const textParts = [
+    "The only 3 things that you can control are your",
+    '<span class="word-thoughts">thoughts</span>, ' +
+    '<span class="word-feelings">feelings</span>, ' +
+    'and <span class="word-actions">actions</span>.'
+  ];
+
+  let partIndex = 0;
+  let charIndex = 0;
   let isDeleting = false;
 
   function type() {
-    if (!isDeleting && i < fullText.length) {
-      el.textContent = fullText.substring(0, i + 1);
-      i++;
+    const currentPart = textParts[partIndex];
+    const plainText = currentPart.replace(/<[^>]*>?/gm, ''); // Strip tags for typing
+    const displayText = plainText.substring(0, charIndex);
+
+    // Apply formatting only after typing the line fully
+    if (isDeleting) {
+      line.textContent = displayText;
+    } else {
+      line.textContent = displayText;
+    }
+
+    if (!isDeleting && charIndex < plainText.length) {
+      charIndex++;
       setTimeout(type, 50);
-    } else if (!isDeleting && i === fullText.length) {
-      // Pause before deleting
-      setTimeout(() => { isDeleting = true; type(); }, 1500);
-    } else if (isDeleting && i > 0) {
-      el.textContent = fullText.substring(0, i - 1);
-      i--;
+    } else if (!isDeleting && charIndex === plainText.length) {
+      // When done typing this line
+      if (partIndex === 1) {
+        // Apply formatted HTML for the 2nd line
+        line.innerHTML = textParts.join("<br>");
+        setTimeout(() => { isDeleting = true; type(); }, 2500);
+      } else {
+        // Pause, then move to next line
+        setTimeout(() => { partIndex++; charIndex = 0; type(); }, 500);
+      }
+    } else if (isDeleting && charIndex > 0) {
+      charIndex--;
+      line.textContent = line.textContent.substring(0, charIndex);
       setTimeout(type, 25);
     } else {
-      // When erased, restore formatted HTML and start over
-      el.innerHTML = fullHTML;
-      i = 0;
+      // Restart after full delete
       isDeleting = false;
+      partIndex = 0;
+      charIndex = 0;
+      line.textContent = "";
       setTimeout(type, 1000);
     }
   }
