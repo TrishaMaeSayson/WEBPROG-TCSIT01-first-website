@@ -21,11 +21,12 @@ body {
 }
 
 .col-md-2 .nav-item {
-  margin-bottom:auto;  
+  margin-bottom:auto;
+  padding-left: 10px;  
 }
 
 .col-md-2 .nav-link {
-  color: darkgray;          /* default text color */
+  color: white;          /* default text color */
   font-size: 20px;          
   padding: 0.45rem 0;       
   display: block;           
@@ -119,6 +120,19 @@ p {
   font-size: 40px;
   color: black;
   margin-top: 0;
+}
+
+#typing-text {
+  font-size: 20px;
+  border-right: 3px solid #73648a;
+  white-space: pre-line;
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: bottom;
+  animation: blink 0.7s step-end infinite;
+
+  /* 👇 prevents h2 from shifting by reserving space */
+  min-height: 6em; /* adjust based on your expected text size */
 }
 
 /* Blinking cursor */

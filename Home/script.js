@@ -5,25 +5,42 @@ function showSection(sectionId) {
 
 document.addEventListener("DOMContentLoaded", function() {
   const textElement = document.getElementById("typing-text");
-  const textContent = textElement.innerHTML; // include the spans
-  textElement.innerHTML = ""; // clear it first
+  const fullHTML = textElement.innerHTML.trim();
+  textElement.innerHTML = ""; // clear before typing starts
 
-  let i = 0;
-  function typeEffect() {
-    if (i < textContent.length) {
-      textElement.innerHTML = textContent.substring(0, i + 1);
-      i++;
-      setTimeout(typeEffect, 50); // typing speed
+  let index = 0;
+  let isTag = false;
+  let temp = "";
+
+  function type() {
+    if (index < fullHTML.length) {
+      let char = fullHTML[index];
+      temp += char;
+      textElement.innerHTML = temp + '<span class="cursor"></span>';
+
+      if (char === "<") isTag = true;
+      if (char === ">") isTag = false;
+
+      index++;
+      setTimeout(type, isTag ? 0 : 40);
     } else {
+      // Remove cursor when done
+      const cursor = document.querySelector(".cursor");
+      if (cursor) cursor.remove();
+
+      // Optional repeat:
+      /*
       setTimeout(() => {
-        i = 0;
+        index = 0;
+        temp = "";
         textElement.innerHTML = "";
-        typeEffect();
-      }, 3000); // pause before repeating
+        type();
+      }, 3000);
+      */
     }
   }
 
-  typeEffect();
+  type();
 });
 
 (function () {
