@@ -5,33 +5,36 @@ function showSection(sectionId) {
 
 document.addEventListener("DOMContentLoaded", function() {
   const el = document.getElementById("typing-text");
-  const fullText = el.innerHTML; // keep formatting
-  el.innerHTML = ""; // start empty
+  const fullHTML = el.innerHTML.trim();   // Save formatted version
+  const tempDiv = document.createElement("div");
+  tempDiv.innerHTML = fullHTML;
+  const fullText = tempDiv.textContent || tempDiv.innerText;  // plain text only
 
   let i = 0;
   let isDeleting = false;
 
-  function typeEffect() {
-    const textLength = fullText.length;
-
-    if (!isDeleting && i < textLength) {
-      el.innerHTML = fullText.slice(0, ++i);
-      setTimeout(typeEffect, 40);
-    } 
-    else if (i === textLength) {
-      setTimeout(() => { isDeleting = true; typeEffect(); }, 1500);
-    } 
-    else if (isDeleting && i > 0) {
-      el.innerHTML = fullText.slice(0, --i);
-      setTimeout(typeEffect, 20);
-    } 
-    else if (isDeleting && i === 0) {
+  function type() {
+    if (!isDeleting && i < fullText.length) {
+      el.textContent = fullText.substring(0, i + 1);
+      i++;
+      setTimeout(type, 50);
+    } else if (!isDeleting && i === fullText.length) {
+      // Pause before deleting
+      setTimeout(() => { isDeleting = true; type(); }, 1500);
+    } else if (isDeleting && i > 0) {
+      el.textContent = fullText.substring(0, i - 1);
+      i--;
+      setTimeout(type, 25);
+    } else {
+      // When erased, restore formatted HTML and start over
+      el.innerHTML = fullHTML;
+      i = 0;
       isDeleting = false;
-      setTimeout(typeEffect, 1000);
+      setTimeout(type, 1000);
     }
   }
 
-  typeEffect();
+  type();
 });
 
 (function () {

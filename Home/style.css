@@ -99,14 +99,17 @@ p {
 }
 
 .word-thoughts { 
+  font-family: 'Lucida Handwriting', cursive; 
   color: #73648a;
 }
 
 .word-feelings { 
+  font-family: 'Lucida Handwriting', cursive; 
   color: #9882ac;
 }
 
 .word-actions { 
+  font-family: 'Lucida Handwriting', cursive; 
   color: #a393bf;
 }
 
@@ -120,17 +123,11 @@ p {
 
 #typing-text {
   font-size: 20px;
-  font-family: 'Lucida Handwriting', cursive; 
   white-space: nowrap;
   overflow: hidden;
   display: inline-block;
   min-height: 60px; 
   animation: blink 0.7s step-end infinite;
-}
-
-/* Blinking cursor */
-@keyframes blink {
-  50% { border-color: transparent; }
 }
 
 #typing-text.typing::after {
