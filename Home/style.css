@@ -80,7 +80,12 @@ p {
 }
 
 .home-text p{
-    font-size: 20px;
+  font-size: 20px;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid #73648a; /* blinking cursor */
+  width: 0;
+  animation: typing-p 5s steps(55) 1s infinite alternate, blink 0.7s step-end infinite;
 }
 
 .highlight-name {
@@ -104,15 +109,6 @@ p {
   font-family: 'Lucida Handwriting', cursive; 
 }
 
-/* 🟣 Typing Effect for HOME SECTION ONLY */
-#home h2, 
-#home p {
-  white-space: nowrap;
-  overflow: hidden;
-  border-right: 3px solid #73648a; /* blinking cursor */
-  width: 0;
-}
-
 /* h2 typing animation */
 #home h2 {
   margin-bottom: 1.5rem;
@@ -120,15 +116,6 @@ p {
   font-size: 40px;
   color: black;
   margin-top: 0;
-  animation: typing-h2 4s steps(20) 1s infinite alternate, blink 0.7s step-end infinite;
-}
-
-/* p typing animation */
-#home p {
-  margin-bottom: 1rem;
-  line-height: 1.6;
-  font-size: 16px;
-  animation: typing-p 5s steps(45) 5s infinite alternate, blink 0.7s step-end infinite;
 }
 
 /* Blinking cursor */
@@ -136,16 +123,10 @@ p {
   50% { border-color: transparent; }
 }
 
-/* Typing for h2 */
-@keyframes typing-h2 {
-  from { width: 0; }
-  to { width: 18ch; } /* adjust depending on text length */
-}
-
 /* Typing for p */
 @keyframes typing-p {
   from { width: 0; }
-  to { width: 60ch; } /* adjust depending on text length */
+  to { width: 48ch; } /* adjust depending on text length */
 }
 
 #home img.profile-pic {
