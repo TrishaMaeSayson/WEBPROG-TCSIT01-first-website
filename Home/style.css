@@ -28,7 +28,7 @@ body {
 }
 
 .col-md-2 .nav-item:hover {
-  color: #a393bf; /* or any color you want */
+  color: #a393bf !important; /* or any color you want */
   cursor: pointer; /* optional: makes it feel clickable */
 }
 
@@ -76,7 +76,7 @@ p {
     display: flex;
     flex-direction: column;       
     justify-content: center;      
-    max-width: 50%;
+    max-width: 55%;
 }
 
 .home-text p{
@@ -85,7 +85,7 @@ p {
   overflow: hidden;
   border-right: 3px solid #73648a; /* blinking cursor */
   width: 0;
-  animation: typing-p 5s steps(55) 1s infinite alternate, blink 0.7s step-end infinite;
+  animation: typing-p 6s steps(65) 1s infinite alternate, blink 0.7s step-end infinite;
 }
 
 .highlight-name {
@@ -109,7 +109,6 @@ p {
   font-family: 'Lucida Handwriting', cursive; 
 }
 
-/* h2 typing animation */
 #home h2 {
   margin-bottom: 1.5rem;
   font-family: 'Abril Fatface', serif;
@@ -126,7 +125,7 @@ p {
 /* Typing for p */
 @keyframes typing-p {
   from { width: 0; }
-  to { width: 48ch; } /* adjust depending on text length */
+  to { width: 58ch; } /* adjust depending on text length */
 }
 
 #home img.profile-pic {
