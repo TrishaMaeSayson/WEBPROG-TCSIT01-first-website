@@ -84,14 +84,6 @@ p {
     max-width: 55%;
 }
 
-.home-text p{
-  font-size: 20px;
-  border-right: 3px solid black; /* blinking cursor */
-  white-space: nowrap;
-  overflow: hidden;
-  animation: blink 0.7s step-end infinite;
-}
-
 .highlight-name {
   color:#73648a;
   font-family: 'Lucida Handwriting', cursive;
@@ -119,20 +111,6 @@ p {
   font-size: 40px;
   color: black;
   margin-top: 0;
-}
-
-#typing-text {
-  font-size: 20px;
-  white-space: nowrap;
-  overflow: hidden;
-  display: inline-block;
-  min-height: 60px;
-  border-right: 3px solid #73648a; /* cursor */
-  animation: blink 0.7s step-end infinite;
-}
-
-@keyframes blink {
-  50% { border-color: transparent; }
 }
 
 #home img.profile-pic {
