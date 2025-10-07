@@ -104,29 +104,48 @@ p {
   font-family: 'Lucida Handwriting', cursive; 
 }
 
-/* Only applies typing effect to the h2 in the home section */
+/* 🟣 Typing Effect for HOME SECTION ONLY */
+#home h2, 
+#home p {
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid #73648a; /* blinking cursor */
+  width: 0;
+}
+
+/* h2 typing animation */
 #home h2 {
   margin-bottom: 1.5rem;
   font-family: 'Abril Fatface', serif;
   font-size: 40px;
   color: black;
   margin-top: 0;
-  white-space: nowrap;
-  overflow: hidden;
-  border-right: 3px solid #73648a; /* typing cursor */
-  width: 0; /* start hidden */
-  animation: typing 4s steps(22) infinite alternate, blink 0.7s step-end infinite;
+  animation: typing-h2 4s steps(20) 1s infinite alternate, blink 0.7s step-end infinite;
 }
 
-/* Cursor blinking */
+/* p typing animation */
+#home p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+  font-size: 16px;
+  animation: typing-p 5s steps(45) 5s infinite alternate, blink 0.7s step-end infinite;
+}
+
+/* Blinking cursor */
 @keyframes blink {
   50% { border-color: transparent; }
 }
 
-/* Typing animation */
-@keyframes typing {
+/* Typing for h2 */
+@keyframes typing-h2 {
   from { width: 0; }
-  to { width: 14ch; } /* adjust if text cuts off */
+  to { width: 18ch; } /* adjust depending on text length */
+}
+
+/* Typing for p */
+@keyframes typing-p {
+  from { width: 0; }
+  to { width: 60ch; } /* adjust depending on text length */
 }
 
 #home img.profile-pic {
