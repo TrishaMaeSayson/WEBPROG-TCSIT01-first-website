@@ -3,46 +3,38 @@ function showSection(sectionId) {
   document.getElementById(sectionId).classList.add('active');
 }
 
-document.addEventListener("DOMContentLoaded", function () {
-  const typingEl = document.getElementById("typing-text");
+document.addEventListener("DOMContentLoaded", () => {
+  const typingText = document.getElementById("typing-text");
 
-  const fullTextHTML = `
+  const fullHTML = `
     The only 3 things that you can control are your <br>
-    <span class="word-thoughts">thoughts</span>, 
-    <span class="word-feelings">feelings</span>, 
+    <span class="word-thoughts">thoughts</span>,
+    <span class="word-feelings">feelings</span>,
     and <span class="word-actions">actions</span>.
   `;
-  const fullText = "The only 3 things that you can control are your thoughts, feelings, and actions.";
 
-  let index = 0;
-  let isDeleting = false;
-  const typingSpeed = 50;
-  const pauseTime = 2000;
+  const plainText = fullHTML
+    .replace(/<[^>]+>/g, "") // remove HTML tags
+    .replace(/\s+/g, " ")
+    .trim();
+
+  let i = 0;
+  const typingSpeed = 50; // ms per character
+  const delayBetweenRepeats = 2000;
 
   function type() {
-    if (!isDeleting) {
-      typingEl.textContent = fullText.substring(0, index);
-      index++;
-      if (index <= fullText.length) {
-        setTimeout(type, typingSpeed);
-      } else {
-        // Once fully typed, show formatted version
-        typingEl.innerHTML = fullTextHTML;
-        setTimeout(() => {
-          isDeleting = true;
-          type();
-        }, pauseTime);
-      }
+    if (i < plainText.length) {
+      typingText.innerHTML = plainText.substring(0, i + 1);
+      i++;
+      setTimeout(type, typingSpeed);
     } else {
-      // Delete one char at a time (remove HTML for this phase)
-      typingEl.textContent = fullText.substring(0, index);
-      index--;
-      if (index >= 0) {
-        setTimeout(type, 25);
-      } else {
-        isDeleting = false;
-        setTimeout(type, 1000);
-      }
+      // Once finished, show formatted HTML (colored spans)
+      typingText.innerHTML = fullHTML;
+      setTimeout(() => {
+        typingText.innerHTML = "";
+        i = 0;
+        setTimeout(type, 500);
+      }, delayBetweenRepeats);
     }
   }
 

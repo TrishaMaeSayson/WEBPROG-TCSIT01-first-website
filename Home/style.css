@@ -81,7 +81,7 @@ p {
     display: flex;
     flex-direction: column;       
     justify-content: center;      
-    max-width: 55%;
+    align-items: flex-start;
 }
 
 .highlight-name {
@@ -111,6 +111,28 @@ p {
   font-size: 40px;
   color: black;
   margin-top: 0;
+}
+
+#typing-text {
+  font-size: 20px;
+  color: #333;
+  border-right: 3px solid #73648a;
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline-block;
+  min-height: 60px; /* Prevents layout jump */
+  padding-right: 5px;
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+#typing-text::after {
+  content: "";
+  animation: blink 0.7s step-end infinite;
 }
 
 #home img.profile-pic {
