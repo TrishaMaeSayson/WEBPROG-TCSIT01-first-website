@@ -3,69 +3,50 @@ function showSection(sectionId) {
   document.getElementById(sectionId).classList.add('active');
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-  const typingElement = document.getElementById("typing-text");
+document.addEventListener("DOMContentLoaded", function () {
+  const typingEl = document.getElementById("typing-text");
 
-  const htmlString = `The only...<br>thoughts...`;
+  const fullTextHTML = `
+    The only 3 things that you can control are your <br>
+    <span class="word-thoughts">thoughts</span>, 
+    <span class="word-feelings">feelings</span>, 
+    and <span class="word-actions">actions</span>.
+  `;
+  const fullText = "The only 3 things that you can control are your thoughts, feelings, and actions.";
 
-  // For the phrase with formatting
-  const formattedHtmlString = `The only...<br><span class="word-thoughts">thoughts</span>...`;
+  let index = 0;
+  let isDeleting = false;
+  const typingSpeed = 50;
+  const pauseTime = 2000;
 
-  let currentIndex = 0;
-  let isTyping = true;
-
-  // Function to type the string with HTML
-  function typeHTML(html, callback) {
-    // Create a temporary element to parse HTML
-    const tempDiv = document.createElement("div");
-    tempDiv.innerHTML = html;
-
-    let chars = [];
-    // Flatten the HTML into a sequence of characters, including tags
-    function flatten(node) {
-      if (node.nodeType === Node.TEXT_NODE) {
-        chars.push({ type: 'text', content: node.textContent });
-      } else if (node.nodeType === Node.ELEMENT_NODE) {
-        // Insert opening tag
-        const tagStart = `<${node.tagName.toLowerCase()}`;
-        let attrs = "";
-        for (let attr of node.attributes) {
-          attrs += ` ${attr.name}="${attr.value}"`;
-        }
-        const startTag = `${tagStart}${attrs}>`;
-        chars.push({ type: 'tag', content: startTag });
-
-        // Recursively process children
-        node.childNodes.forEach(child => flatten(child));
-
-        // Insert closing tag
-        const endTag = `</${node.tagName.toLowerCase()}>`;
-        chars.push({ type: 'tag', content: endTag });
-      }
-    }
-
-    Array.from(tempDiv.childNodes).forEach(node => flatten(node));
-
-    // Now type character by character
-    let displayHTML = "";
-    let index = 0;
-
-    function typeChar() {
-      if (index >= chars.length) {
-        if (callback) callback();
-        return;
-      }
-      displayHTML += chars[index].content;
-      typingElement.innerHTML = displayHTML;
+  function type() {
+    if (!isDeleting) {
+      typingEl.textContent = fullText.substring(0, index);
       index++;
-      setTimeout(typeChar, 30); // Adjust speed here
+      if (index <= fullText.length) {
+        setTimeout(type, typingSpeed);
+      } else {
+        // Once fully typed, show formatted version
+        typingEl.innerHTML = fullTextHTML;
+        setTimeout(() => {
+          isDeleting = true;
+          type();
+        }, pauseTime);
+      }
+    } else {
+      // Delete one char at a time (remove HTML for this phase)
+      typingEl.textContent = fullText.substring(0, index);
+      index--;
+      if (index >= 0) {
+        setTimeout(type, 25);
+      } else {
+        isDeleting = false;
+        setTimeout(type, 1000);
+      }
     }
-
-    typeChar();
   }
 
-  // Start typing
-  typeHTML(formattedHtmlString);
+  type();
 });
 
 (function () {
