@@ -21,15 +21,20 @@ body {
 }
 
 .col-md-2 .nav-item {
-  margin-bottom:auto;
-  color: darkgray;        
-  padding: 0.45rem 0;     
-  font-size: 20px;        
+  margin-bottom:auto;  
 }
 
-.col-md-2 .nav-item:hover {
-  color: #a393bf !important; /* or any color you want */
-  cursor: pointer; /* optional: makes it feel clickable */
+.col-md-2 .nav-link {
+  color: darkgray;          /* default text color */
+  font-size: 20px;          
+  padding: 0.45rem 0;       
+  display: block;           
+  transition: color 0.3s ease;
+}
+
+.col-md-2 .nav-link:hover {
+  color: #a393bf;           /* hover color */
+  cursor: pointer;
 }
 
 h1{
@@ -81,11 +86,12 @@ p {
 
 .home-text p{
   font-size: 20px;
-  white-space: nowrap;
+  white-space: pre-wrap;
   overflow: hidden;
   border-right: 3px solid #73648a; /* blinking cursor */
-  width: 0;
-  animation: typing-p 6s steps(65) 1s infinite alternate, blink 0.7s step-end infinite;
+  max-width: 45ch;
+  animation: typing-p 6s steps(60) 1s infinite alternate, blink 0.7s step-end infinite;
+  line-height: 1.6;
 }
 
 .highlight-name {
@@ -125,7 +131,7 @@ p {
 /* Typing for p */
 @keyframes typing-p {
   from { width: 0; }
-  to { width: 58ch; } /* adjust depending on text length */
+  to { width: 100%; } /* adjust depending on text length */
 }
 
 #home img.profile-pic {
