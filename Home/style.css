@@ -52,27 +52,6 @@ p {
   font-size: 16px;
 }
 
-.highlight-name {
-  color:#73648a;
-  font-family: 'Lucida Handwriting', cursive;
-  font-size: 40px;
-}
-
-.word-thoughts { 
-  color: #73648a;
-  font-family: 'Lucida Handwriting', cursive; 
-}
-
-.word-feelings { 
-  color: #9882ac;
-  font-family: 'Lucida Handwriting', cursive; 
-}
-
-.word-actions { 
-  color: #a393bf;
-  font-family: 'Lucida Handwriting', cursive; 
-}
-
 .profile-pic { 
   min-height: 25vh;     
   width: 150px;
@@ -102,6 +81,52 @@ p {
 
 .home-text p{
     font-size: 20px;
+}
+
+.highlight-name {
+  color:#73648a;
+  font-family: 'Lucida Handwriting', cursive;
+  font-size: 40px;
+}
+
+.word-thoughts { 
+  color: #73648a;
+  font-family: 'Lucida Handwriting', cursive; 
+}
+
+.word-feelings { 
+  color: #9882ac;
+  font-family: 'Lucida Handwriting', cursive; 
+}
+
+.word-actions { 
+  color: #a393bf;
+  font-family: 'Lucida Handwriting', cursive; 
+}
+
+/* Only applies typing effect to the h2 in the home section */
+#home h2 {
+  margin-bottom: 1.5rem;
+  font-family: 'Abril Fatface', serif;
+  font-size: 40px;
+  color: black;
+  margin-top: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid #73648a; /* typing cursor */
+  width: 0; /* start hidden */
+  animation: typing 4s steps(22) infinite alternate, blink 0.7s step-end infinite;
+}
+
+/* Cursor blinking */
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+/* Typing animation */
+@keyframes typing {
+  from { width: 0; }
+  to { width: 14ch; } /* adjust if text cuts off */
 }
 
 #home img.profile-pic {
