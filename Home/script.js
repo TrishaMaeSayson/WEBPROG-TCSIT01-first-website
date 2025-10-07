@@ -29,8 +29,11 @@ document.addEventListener("DOMContentLoaded", () => {
       setTimeout(type, typingSpeed);
     } else {
       // Once finished, show formatted HTML (colored spans)
+      typingText.classList.add("fade-in");
       typingText.innerHTML = fullHTML;
+
       setTimeout(() => {
+        typingText.classList.remove("fade-in");
         typingText.innerHTML = "";
         i = 0;
         setTimeout(type, 500);
