@@ -41,7 +41,7 @@ h1{
 h2 {
   margin-bottom: 1.5rem; /* space between header and first paragraph */
   font-family: 'Abril Fatface', serif;
-  font-size: 60px;
+  font-size: 40px;
   color: black;
   margin-top: 0;
 }
@@ -49,28 +49,28 @@ h2 {
 p {
   margin-bottom: 1rem;
   line-height: 1.6;
-  font-size: 16px;
+  font-size: 18px;
 }
 
 .highlight-name {
   color:#73648a;
-  font-family: 'Brush Script MT', cursive;
+  font-family: 'Lucida Handwriting', cursive;
   font-size: 70px;
 }
 
 .word-thoughts { 
   color: #73648a;
-  font-family: 'Brush Script MT', cursive; 
+  font-family: 'Lucida Handwriting', cursive; 
 }
 
 .word-feelings { 
   color: #9882ac;
-  font-family: 'Brush Script MT', cursive; 
+  font-family: 'Lucida Handwriting', cursive; 
 }
 
 .word-actions { 
   color: #a393bf;
-  font-family: 'Brush Script MT', cursive; 
+  font-family: 'Lucida Handwriting', cursive; 
 }
 
 .profile-pic { 
@@ -98,6 +98,10 @@ p {
     flex-direction: column;       
     justify-content: center;      
     max-width: 50%;
+}
+
+.home-text p{
+    font-size: 20px;
 }
 
 #home img.profile-pic {
@@ -214,8 +218,8 @@ p {
 }
 
 .about-logo {
-  width: 160px;               /* consistent box width */
-  height: 120px;              /* consistent box height */
+  width: 140px;               /* consistent box width */
+  height: 100px;              /* consistent box height */
   background-color: #73648a;     /* background for transparent logos */
   border-radius: 12px;
   display: flex;              /* center logo inside the box */
