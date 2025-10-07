@@ -3,61 +3,69 @@ function showSection(sectionId) {
   document.getElementById(sectionId).classList.add('active');
 }
 
-document.addEventListener("DOMContentLoaded", function() {
-  const line = document.getElementById("typing-line");
+document.addEventListener("DOMContentLoaded", () => {
+  const typingElement = document.getElementById("typing-text");
 
-  // Text blocks (supports HTML formatting)
-  const textParts = [
-    "The only 3 things that you can control are your",
-    '<span class="word-thoughts">thoughts</span>, ' +
-    '<span class="word-feelings">feelings</span>, ' +
-    'and <span class="word-actions">actions</span>.'
-  ];
+  const htmlString = `The only...<br>thoughts...`;
 
-  let partIndex = 0;
-  let charIndex = 0;
-  let isDeleting = false;
+  // For the phrase with formatting
+  const formattedHtmlString = `The only...<br><span class="word-thoughts">thoughts</span>...`;
 
-  function type() {
-    const currentPart = textParts[partIndex];
-    const plainText = currentPart.replace(/<[^>]*>?/gm, ''); // Strip tags for typing
-    const displayText = plainText.substring(0, charIndex);
+  let currentIndex = 0;
+  let isTyping = true;
 
-    // Apply formatting only after typing the line fully
-    if (isDeleting) {
-      line.textContent = displayText;
-    } else {
-      line.textContent = displayText;
-    }
+  // Function to type the string with HTML
+  function typeHTML(html, callback) {
+    // Create a temporary element to parse HTML
+    const tempDiv = document.createElement("div");
+    tempDiv.innerHTML = html;
 
-    if (!isDeleting && charIndex < plainText.length) {
-      charIndex++;
-      setTimeout(type, 50);
-    } else if (!isDeleting && charIndex === plainText.length) {
-      // When done typing this line
-      if (partIndex === 1) {
-        // Apply formatted HTML for the 2nd line
-        line.innerHTML = textParts.join("<br>");
-        setTimeout(() => { isDeleting = true; type(); }, 2500);
-      } else {
-        // Pause, then move to next line
-        setTimeout(() => { partIndex++; charIndex = 0; type(); }, 500);
+    let chars = [];
+    // Flatten the HTML into a sequence of characters, including tags
+    function flatten(node) {
+      if (node.nodeType === Node.TEXT_NODE) {
+        chars.push({ type: 'text', content: node.textContent });
+      } else if (node.nodeType === Node.ELEMENT_NODE) {
+        // Insert opening tag
+        const tagStart = `<${node.tagName.toLowerCase()}`;
+        let attrs = "";
+        for (let attr of node.attributes) {
+          attrs += ` ${attr.name}="${attr.value}"`;
+        }
+        const startTag = `${tagStart}${attrs}>`;
+        chars.push({ type: 'tag', content: startTag });
+
+        // Recursively process children
+        node.childNodes.forEach(child => flatten(child));
+
+        // Insert closing tag
+        const endTag = `</${node.tagName.toLowerCase()}>`;
+        chars.push({ type: 'tag', content: endTag });
       }
-    } else if (isDeleting && charIndex > 0) {
-      charIndex--;
-      line.textContent = line.textContent.substring(0, charIndex);
-      setTimeout(type, 25);
-    } else {
-      // Restart after full delete
-      isDeleting = false;
-      partIndex = 0;
-      charIndex = 0;
-      line.textContent = "";
-      setTimeout(type, 1000);
     }
+
+    Array.from(tempDiv.childNodes).forEach(node => flatten(node));
+
+    // Now type character by character
+    let displayHTML = "";
+    let index = 0;
+
+    function typeChar() {
+      if (index >= chars.length) {
+        if (callback) callback();
+        return;
+      }
+      displayHTML += chars[index].content;
+      typingElement.innerHTML = displayHTML;
+      index++;
+      setTimeout(typeChar, 30); // Adjust speed here
+    }
+
+    typeChar();
   }
 
-  type();
+  // Start typing
+  typeHTML(formattedHtmlString);
 });
 
 (function () {
