@@ -3,55 +3,35 @@ function showSection(sectionId) {
   document.getElementById(sectionId).classList.add('active');
 }
 
-document.addEventListener("DOMContentLoaded", function () {
-  const typingText = document.getElementById("typing-text");
-  const phrases = [
-    "The only 3 things that you can control are your",
-    "thoughts,",
-    "feelings,",
-    "and actions."
-  ];
+document.addEventListener("DOMContentLoaded", function() {
+  const el = document.getElementById("typing-text");
+  const fullText = el.innerHTML; // keep formatting
+  el.innerHTML = ""; // start empty
 
-  let currentPhrase = 0;
-  let currentChar = 0;
+  let i = 0;
   let isDeleting = false;
 
-  function type() {
-    const current = phrases[currentPhrase];
-    const speed = isDeleting ? 40 : 70;
+  function typeEffect() {
+    const textLength = fullText.length;
 
-    typingText.classList.add("typing");
-    typingText.innerHTML =
-      current.substring(0, currentChar) +
-      (currentPhrase === 1
-        ? '<span class="word-thoughts">thoughts</span>'
-        : currentPhrase === 2
-        ? '<span class="word-feelings">feelings</span>'
-        : currentPhrase === 3
-        ? '<span class="word-actions">actions</span>'
-        : "");
-
-    if (!isDeleting && currentChar < current.length) {
-      currentChar++;
-      setTimeout(type, speed);
-    } else if (currentChar === current.length && !isDeleting) {
-      // Pause before deleting
-      setTimeout(() => {
-        isDeleting = true;
-        setTimeout(type, 600);
-      }, 1200);
-    } else if (isDeleting && currentChar > 0) {
-      currentChar--;
-      setTimeout(type, speed / 2);
-    } else {
-      // Move to next phrase
+    if (!isDeleting && i < textLength) {
+      el.innerHTML = fullText.slice(0, ++i);
+      setTimeout(typeEffect, 40);
+    } 
+    else if (i === textLength) {
+      setTimeout(() => { isDeleting = true; typeEffect(); }, 1500);
+    } 
+    else if (isDeleting && i > 0) {
+      el.innerHTML = fullText.slice(0, --i);
+      setTimeout(typeEffect, 20);
+    } 
+    else if (isDeleting && i === 0) {
       isDeleting = false;
-      currentPhrase = (currentPhrase + 1) % phrases.length;
-      setTimeout(type, 800);
+      setTimeout(typeEffect, 1000);
     }
   }
 
-  type();
+  typeEffect();
 });
 
 (function () {

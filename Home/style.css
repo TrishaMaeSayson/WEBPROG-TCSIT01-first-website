@@ -100,17 +100,14 @@ p {
 
 .word-thoughts { 
   color: #73648a;
-  font-family: 'Lucida Handwriting', cursive; 
 }
 
 .word-feelings { 
   color: #9882ac;
-  font-family: 'Lucida Handwriting', cursive; 
 }
 
 .word-actions { 
   color: #a393bf;
-  font-family: 'Lucida Handwriting', cursive; 
 }
 
 #home h2 {
@@ -123,13 +120,12 @@ p {
 
 #typing-text {
   font-size: 20px;
-  border-right: 3px solid #73648a;
-  white-space: pre-line;
+  font-family: 'Lucida Handwriting', cursive; 
+  white-space: nowrap;
   overflow: hidden;
   display: inline-block;
-  vertical-align: bottom;
-  /* 👇 prevents h2 from shifting by reserving space */
-  min-height: 6em; /* adjust based on your expected text size */
+  min-height: 60px; 
+  animation: blink 0.7s step-end infinite;
 }
 
 /* Blinking cursor */
