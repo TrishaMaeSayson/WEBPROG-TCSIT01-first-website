@@ -3,40 +3,51 @@ function showSection(sectionId) {
   document.getElementById(sectionId).classList.add('active');
 }
 
-document.addEventListener("DOMContentLoaded", function() {
-  const textElement = document.getElementById("typing-text");
-  const fullHTML = textElement.innerHTML.trim();
-  textElement.innerHTML = ""; // clear before typing starts
+document.addEventListener("DOMContentLoaded", function () {
+  const typingText = document.getElementById("typing-text");
+  const phrases = [
+    "The only 3 things that you can control are your",
+    "thoughts,",
+    "feelings,",
+    "and actions."
+  ];
 
-  let index = 0;
-  let isTag = false;
-  let temp = "";
+  let currentPhrase = 0;
+  let currentChar = 0;
+  let isDeleting = false;
 
   function type() {
-    if (index < fullHTML.length) {
-      let char = fullHTML[index];
-      temp += char;
-      textElement.innerHTML = temp + '<span class="cursor"></span>';
+    const current = phrases[currentPhrase];
+    const speed = isDeleting ? 40 : 70;
 
-      if (char === "<") isTag = true;
-      if (char === ">") isTag = false;
+    typingText.classList.add("typing");
+    typingText.innerHTML =
+      current.substring(0, currentChar) +
+      (currentPhrase === 1
+        ? '<span class="word-thoughts">thoughts</span>'
+        : currentPhrase === 2
+        ? '<span class="word-feelings">feelings</span>'
+        : currentPhrase === 3
+        ? '<span class="word-actions">actions</span>'
+        : "");
 
-      index++;
-      setTimeout(type, isTag ? 0 : 40);
-    } else {
-      // Remove cursor when done
-      const cursor = document.querySelector(".cursor");
-      if (cursor) cursor.remove();
-
-      // Optional repeat:
-      /*
+    if (!isDeleting && currentChar < current.length) {
+      currentChar++;
+      setTimeout(type, speed);
+    } else if (currentChar === current.length && !isDeleting) {
+      // Pause before deleting
       setTimeout(() => {
-        index = 0;
-        temp = "";
-        textElement.innerHTML = "";
-        type();
-      }, 3000);
-      */
+        isDeleting = true;
+        setTimeout(type, 600);
+      }, 1200);
+    } else if (isDeleting && currentChar > 0) {
+      currentChar--;
+      setTimeout(type, speed / 2);
+    } else {
+      // Move to next phrase
+      isDeleting = false;
+      currentPhrase = (currentPhrase + 1) % phrases.length;
+      setTimeout(type, 800);
     }
   }
 

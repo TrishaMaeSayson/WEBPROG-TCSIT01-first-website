@@ -22,7 +22,6 @@ body {
 
 .col-md-2 .nav-item {
   margin-bottom:auto;
-  padding-left: 10px;  
 }
 
 .col-md-2 .nav-link {
@@ -129,8 +128,6 @@ p {
   overflow: hidden;
   display: inline-block;
   vertical-align: bottom;
-  animation: blink 0.7s step-end infinite;
-
   /* 👇 prevents h2 from shifting by reserving space */
   min-height: 6em; /* adjust based on your expected text size */
 }
@@ -138,6 +135,12 @@ p {
 /* Blinking cursor */
 @keyframes blink {
   50% { border-color: transparent; }
+}
+
+#typing-text.typing::after {
+  content: "";
+  border-right: 3px solid #73648a;
+  animation: blink 0.7s step-end infinite;
 }
 
 #home img.profile-pic {
