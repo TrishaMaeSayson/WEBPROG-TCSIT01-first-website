@@ -13,25 +13,25 @@ document.addEventListener("DOMContentLoaded", () => {
     and <span class="word-actions">actions</span>.
   `;
 
-  const plainText = fullHTML
-    .replace(/<[^>]+>/g, "") // remove HTML tags
-    .replace(/\s+/g, " ")
-    .trim();
+  const plainText = fullHTML.replace(/<[^>]+>/g, "").replace(/\s+/g, " ").trim();
 
   let i = 0;
-  const typingSpeed = 50; // ms per character
+  const typingSpeed = 50;
   const delayBetweenRepeats = 2000;
 
   function type() {
     if (i < plainText.length) {
-      typingText.innerHTML = plainText.substring(0, i + 1);
+      typingText.textContent = plainText.substring(0, i + 1);
       i++;
       setTimeout(type, typingSpeed);
     } else {
-      // Once finished, show formatted HTML (colored spans)
+      // Once finished, fade to formatted version
       typingText.classList.add("fade-in");
-      typingText.innerHTML = fullHTML;
+      setTimeout(() => {
+        typingText.innerHTML = fullHTML;
+      }, 200); // slight delay to avoid flicker
 
+      // Wait, fade out, and restart typing
       setTimeout(() => {
         typingText.classList.remove("fade-in");
         typingText.innerHTML = "";
