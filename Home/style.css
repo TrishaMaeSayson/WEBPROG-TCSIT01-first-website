@@ -121,19 +121,14 @@ p {
   margin-top: 0;
 }
 
-.typing-text {
+#typing-text {
   font-size: 20px;
-  display: inline-block;
   white-space: nowrap;
   overflow: hidden;
-  border-right: 3px solid #73648a;
-  width: 0;
-  animation: typing 6s steps(60, end) infinite alternate, blink 0.7s step-end infinite;
-}
-
-@keyframes typing {
-  from { width: 0; }
-  to { width: 48ch; } /* Adjust based on your text length */
+  display: inline-block;
+  min-height: 60px;
+  border-right: 3px solid #73648a; /* cursor */
+  animation: blink 0.7s step-end infinite;
 }
 
 @keyframes blink {

@@ -3,6 +3,52 @@ function showSection(sectionId) {
   document.getElementById(sectionId).classList.add('active');
 }
 
+document.addEventListener("DOMContentLoaded", function () {
+  const typingEl = document.getElementById("typing-text");
+
+  const fullTextHTML = `
+    The only 3 things that you can control are your <br>
+    <span class="word-thoughts">thoughts</span>, 
+    <span class="word-feelings">feelings</span>, 
+    and <span class="word-actions">actions</span>.
+  `;
+  const fullText = "The only 3 things that you can control are your thoughts, feelings, and actions.";
+
+  let index = 0;
+  let isDeleting = false;
+  const typingSpeed = 50;
+  const pauseTime = 2000;
+
+  function type() {
+    if (!isDeleting) {
+      typingEl.textContent = fullText.substring(0, index);
+      index++;
+      if (index <= fullText.length) {
+        setTimeout(type, typingSpeed);
+      } else {
+        // Once fully typed, show formatted version
+        typingEl.innerHTML = fullTextHTML;
+        setTimeout(() => {
+          isDeleting = true;
+          type();
+        }, pauseTime);
+      }
+    } else {
+      // Delete one char at a time (remove HTML for this phase)
+      typingEl.textContent = fullText.substring(0, index);
+      index--;
+      if (index >= 0) {
+        setTimeout(type, 25);
+      } else {
+        isDeleting = false;
+        setTimeout(type, 1000);
+      }
+    }
+  }
+
+  type();
+});
+
 (function () {
   const audio = document.getElementById('piano');
   const btn = document.getElementById('aboutPlayBtn');
