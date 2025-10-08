@@ -459,14 +459,17 @@ p {
   box-shadow: 0 4px 10px rgba(115, 100, 138, 0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: flex;
-  gap: 40px;
+  gap: 20px;
   align-items: flex-start;
+}
+
+#achievement h2 {
+  margin-bottom: 1.5rem;  /* closer to the photos */
 }
 
 /* Text details */
 .achievement-details {
-  flex: 1;
-  padding: 20px 30px;
+  padding: 10px 15px;
 }
 
 .achievement-details .highlight {
