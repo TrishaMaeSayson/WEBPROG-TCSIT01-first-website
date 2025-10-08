@@ -127,12 +127,6 @@ p {
   }
 }
 
-#typing-text::after { 
-  content: '|'; 
-  animation: blink 0.7s 
-  step-end infinite; 
-}
-
 #home img.profile-pic {
     width: 350px;             
     height: auto;            

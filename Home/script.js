@@ -3,62 +3,39 @@ function showSection(sectionId) {
   document.getElementById(sectionId).classList.add('active');
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-  const text1 = "The only 3 things that you can control are your";
-  const words = {
-    thoughts: "thoughts",
-    feelings: "feelings",
-    actions: "actions"
-  };
-
+document.addEventListener("DOMContentLoaded", function() {
   const typingText = document.getElementById("typing-text");
-  const spans = {
-    thoughts: document.getElementById("thoughts"),
-    feelings: document.getElementById("feelings"),
-    actions: document.getElementById("actions")
-  };
 
-  let i = 0;
-  let phase = "line1";
+  const phrases = [
+    'The only 3 things that you can control are your <br>' +
+    '<span class="word-thoughts">thoughts</span>, ' +
+    '<span class="word-feelings">feelings</span>, ' +
+    'and <span class="word-actions">actions</span>.'
+  ];
+
+  let i = 0; // character index
+  let text = phrases[0];
+  let cursor;
 
   function type() {
-    if (phase === "line1") {
-      typingText.firstChild.textContent = text1.substring(0, i);
-      i++;
-      if (i <= text1.length) {
-        setTimeout(type, 40);
-      } else {
-        phase = "thoughts"; i = 0; setTimeout(type, 500);
-      }
-    } else if (phase === "thoughts") {
-      spans.thoughts.textContent = words.thoughts.substring(0, i);
-      i++;
-      if (i <= words.thoughts.length) setTimeout(type, 80);
-      else { phase = "feelings"; i = 0; setTimeout(type, 400); }
-    } else if (phase === "feelings") {
-      spans.feelings.textContent = words.feelings.substring(0, i);
-      i++;
-      if (i <= words.feelings.length) setTimeout(type, 80);
-      else { phase = "actions"; i = 0; setTimeout(type, 400); }
-    } else if (phase === "actions") {
-      spans.actions.textContent = words.actions.substring(0, i);
-      i++;
-      if (i <= words.actions.length) setTimeout(type, 80);
-      else setTimeout(restart, 2500);
-    }
-  }
+    typingText.innerHTML = text.slice(0, i) + (cursor ? cursor.outerHTML : '');
+    cursor = document.createElement('span');
+    cursor.id = 'typing-cursor';
 
-  function restart() {
-    typingText.firstChild.textContent = "";
-    spans.thoughts.textContent = "";
-    spans.feelings.textContent = "";
-    spans.actions.textContent = "";
-    i = 0; phase = "line1"; setTimeout(type, 800);
+    if (i < text.length) {
+      i++;
+      setTimeout(type, 50);
+    } else {
+      // Pause before restart
+      setTimeout(() => {
+        i = 0;
+        type();
+      }, 2000);
+    }
   }
 
   type();
 });
-
 
 (function () {
   const audio = document.getElementById('piano');
