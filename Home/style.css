@@ -82,6 +82,7 @@ p {
     flex-direction: column;       
     justify-content: center;      
     align-items: flex-start;
+    min-height: 200px;
 }
 
 .highlight-name {
