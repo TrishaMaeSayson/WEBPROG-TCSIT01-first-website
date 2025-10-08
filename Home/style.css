@@ -290,7 +290,7 @@ p {
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  gap: 8px; /* spacing between photo and controls */
+  gap: 6px; /* spacing between photo and controls */
   position: relative;
 }
 
