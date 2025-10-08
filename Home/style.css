@@ -371,24 +371,18 @@ p {
 .education-box {
   flex: 1;
   background-color: #f3eefc;
-  border: 2px solid #d0c4eb;
+  border: 2px solid #a393bf;
   border-radius: 15px;
   padding: 25px 30px;
   box-shadow: 0 4px 10px rgba(115, 100, 138, 0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.education-box h3 {
-  font-size: 22px;
-  margin-bottom: 15px;
-  color: #4b3b6b;
-}
-
 .school-entry {
   margin-bottom: 18px;
 }
 
-.school-entry h4 {
+.school-entry h3 {
   font-size: 18px;
   font-weight: 600;
   color: #73648a;
@@ -453,7 +447,7 @@ p {
 .achievements-box {
   display: flex;
   background-color: #f3eefc;
-  border: 2px solid #d0c4eb;
+  border: 2px solid #a393bf;
   border-radius: 15px;
   padding: 25px 30px;
   box-shadow: 0 4px 10px rgba(115, 100, 138, 0.2);
