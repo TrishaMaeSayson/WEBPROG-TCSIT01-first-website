@@ -4,45 +4,61 @@ function showSection(sectionId) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+  const text1 = "The only 3 things that you can control are your";
+  const words = {
+    thoughts: "thoughts",
+    feelings: "feelings",
+    actions: "actions"
+  };
+
   const typingText = document.getElementById("typing-text");
-
-  const fullHTML = `
-    The only 3 things that you can control are your <br>
-    <span class="word-thoughts">thoughts</span>,
-    <span class="word-feelings">feelings</span>,
-    and <span class="word-actions">actions</span>.
-  `;
-
-  const plainText = fullHTML.replace(/<[^>]+>/g, "").replace(/\s+/g, " ").trim();
+  const spans = {
+    thoughts: document.getElementById("thoughts"),
+    feelings: document.getElementById("feelings"),
+    actions: document.getElementById("actions")
+  };
 
   let i = 0;
-  const typingSpeed = 50;
-  const delayBetweenRepeats = 2000;
+  let phase = "line1";
 
   function type() {
-    if (i < plainText.length) {
-      typingText.textContent = plainText.substring(0, i + 1);
+    if (phase === "line1") {
+      typingText.firstChild.textContent = text1.substring(0, i);
       i++;
-      setTimeout(type, typingSpeed);
-    } else {
-      // Once finished, fade to formatted version
-      typingText.classList.add("fade-in");
-      setTimeout(() => {
-        typingText.innerHTML = fullHTML;
-      }, 200); // slight delay to avoid flicker
-
-      // Wait, fade out, and restart typing
-      setTimeout(() => {
-        typingText.classList.remove("fade-in");
-        typingText.innerHTML = "";
-        i = 0;
-        setTimeout(type, 500);
-      }, delayBetweenRepeats);
+      if (i <= text1.length) {
+        setTimeout(type, 40);
+      } else {
+        phase = "thoughts"; i = 0; setTimeout(type, 500);
+      }
+    } else if (phase === "thoughts") {
+      spans.thoughts.textContent = words.thoughts.substring(0, i);
+      i++;
+      if (i <= words.thoughts.length) setTimeout(type, 80);
+      else { phase = "feelings"; i = 0; setTimeout(type, 400); }
+    } else if (phase === "feelings") {
+      spans.feelings.textContent = words.feelings.substring(0, i);
+      i++;
+      if (i <= words.feelings.length) setTimeout(type, 80);
+      else { phase = "actions"; i = 0; setTimeout(type, 400); }
+    } else if (phase === "actions") {
+      spans.actions.textContent = words.actions.substring(0, i);
+      i++;
+      if (i <= words.actions.length) setTimeout(type, 80);
+      else setTimeout(restart, 2500);
     }
+  }
+
+  function restart() {
+    typingText.firstChild.textContent = "";
+    spans.thoughts.textContent = "";
+    spans.feelings.textContent = "";
+    spans.actions.textContent = "";
+    i = 0; phase = "line1"; setTimeout(type, 800);
   }
 
   type();
 });
+
 
 (function () {
   const audio = document.getElementById('piano');
