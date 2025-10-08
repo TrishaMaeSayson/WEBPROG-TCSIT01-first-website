@@ -451,20 +451,9 @@ p {
 
 /* Container layout */
 .achievements-box {
-  flex: 1;
-  background-color: #f3eefc;
-  border: 2px solid #d0c4eb;
-  border-radius: 15px;
-  padding: 25px 30px;
-  box-shadow: 0 4px 10px rgba(115, 100, 138, 0.2);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: flex;
+  flex-direction: column;
   gap: 20px;
-  align-items: flex-start;
-}
-
-#achievement h2 {
-  margin-bottom: 1.5rem;  /* closer to the photos */
 }
 
 /* Text details */
@@ -483,7 +472,7 @@ p {
   justify-content: flex-start; /* align to left */
   align-items: center;
   gap: 15px;                  /* space between photos */
-  flex-wrap: wrap;            /* optional: wrap to next line if screen too small */
+  height: auto;            /* optional: wrap to next line if screen too small */
 }
 
 /* Individual photo boxes */
