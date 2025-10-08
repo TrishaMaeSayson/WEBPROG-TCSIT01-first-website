@@ -486,8 +486,8 @@ p {
 /* Individual photo boxes */
 .achievement-photos .photo-square {
   position: relative;         /* remove absolute positioning */
-  width: 250px;
-  height: 250px;
+  width: 200px;
+  height: 200px;
   border-radius: 8px;         /* photograph corners */
   overflow: hidden;
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
