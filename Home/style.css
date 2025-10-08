@@ -454,12 +454,12 @@ p {
   box-shadow: 0 4px 10px rgba(115, 100, 138, 0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   flex-direction: column;
-  gap: 500px;
+  gap: 20px;
 }
 
 /* Text details */
 .achievement-details {
-  padding: 10px 15px;
+  padding: 50px 65px;
 }
 
 .achievement-details .highlight {
