@@ -469,7 +469,7 @@ p {
 
 /* Container for achievement photos */
 .achievement-photos {
-  margin-top: 20px;
+  margin-top: 50px;
   display: flex;              /* lay photos side by side */
   justify-content: flex-start; /* align to left */
   align-items: center;
