@@ -118,7 +118,8 @@ p {
   white-space: nowrap;
   overflow: hidden;
   display: inline-block;
-  min-height: 60px;
+  min-height: 1.4em;
+  position: relative;
 }
 
 @keyframes blink {
