@@ -452,6 +452,12 @@ p {
 /* Container layout */
 .achievements-box {
   display: flex;
+  background-color: #f3eefc;
+  border: 2px solid #d0c4eb;
+  border-radius: 15px;
+  padding: 25px 30px;
+  box-shadow: 0 4px 10px rgba(115, 100, 138, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   flex-direction: column;
   gap: 20px;
 }
