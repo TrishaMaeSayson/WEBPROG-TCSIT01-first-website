@@ -454,7 +454,7 @@ p {
   box-shadow: 0 4px 10px rgba(115, 100, 138, 0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   flex-direction: column;
-  gap: 50px;
+  gap: 100px;
 }
 
 /* Text details */
