@@ -459,7 +459,7 @@ p {
 
 /* Text details */
 .achievement-details {
-  padding: 50px 65px;
+  padding: 10px 15px;
 }
 
 .achievement-details .highlight {
@@ -469,6 +469,7 @@ p {
 
 /* Container for achievement photos */
 .achievement-photos {
+  margin-top: 20px;
   display: flex;              /* lay photos side by side */
   justify-content: flex-start; /* align to left */
   align-items: center;
