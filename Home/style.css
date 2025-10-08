@@ -358,8 +358,100 @@ p {
   background-color: #a393bf; /* 💜 replace with your preferred color */
 }
 
-#school p:not(:has(strong)){
-  text-indent: 50px;
+/* Education Section Layout */
+.education-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+  margin-top: 30px;
+}
+
+/* Left Rectangle */
+.education-box {
+  flex: 1;
+  background-color: #f3eefc;
+  border: 2px solid #d0c4eb;
+  border-radius: 15px;
+  padding: 25px 30px;
+  box-shadow: 0 4px 10px rgba(115, 100, 138, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.education-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(115, 100, 138, 0.3);
+}
+
+.education-box h3 {
+  font-size: 22px;
+  margin-bottom: 15px;
+  color: #4b3b6b;
+}
+
+.school-entry {
+  margin-bottom: 18px;
+}
+
+.school-entry h4 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #5a4785;
+}
+
+.school-entry p {
+  margin: 5px 0 0;
+  font-size: 15px;
+}
+
+/* Right Side: Overlapping Photo Squares */
+.education-photos {
+  flex: 1;
+  position: relative;
+  height: 300px;
+}
+
+.photo-square {
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.4s ease;
+}
+
+.photo-square img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Overlap arrangement */
+.square1 {
+  top: 0;
+  left: 40px;
+  z-index: 3;
+  transform: rotate(-6deg);
+}
+
+.square2 {
+  top: 60px;
+  left: 120px;
+  z-index: 2;
+  transform: rotate(4deg);
+}
+
+.square3 {
+  top: 120px;
+  left: 200px;
+  z-index: 1;
+  transform: rotate(-3deg);
+}
+
+.photo-square:hover {
+  transform: scale(1.05);
+  z-index: 4;
 }
 
 .content-section:not(#home) {
