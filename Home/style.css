@@ -370,7 +370,6 @@ p {
 /* Left Rectangle */
 .education-box {
   flex: 1;
-  background-color: #f3eefc;
   border: 2px solid #d0c4eb;
   border-radius: 15px;
   padding: 25px 30px;
@@ -396,7 +395,7 @@ p {
 .school-entry h4 {
   font-size: 18px;
   font-weight: 600;
-  color: #5a4785;
+  color: #73648a;
 }
 
 .school-entry p {
@@ -457,7 +456,6 @@ p {
 /* Container layout */
 .achievements-box {
   flex: 1;
-  background-color: #f3eefc;
   border: 2px solid #d0c4eb;
   border-radius: 15px;
   padding: 25px 30px;
@@ -479,6 +477,11 @@ p {
   padding: 20px 30px;
   background-color: #f7f7f7;
   border-radius: 12px;
+}
+
+.achievement-details .highlight {
+  font-weight: 600;
+  color: #73648a;
 }
 
 /* Photos on right */
