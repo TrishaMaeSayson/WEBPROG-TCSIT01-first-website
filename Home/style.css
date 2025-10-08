@@ -467,8 +467,6 @@ p {
 .achievement-details {
   flex: 1;
   padding: 20px 30px;
-  background-color: #f7f7f7;
-  border-radius: 12px;
 }
 
 .achievement-details .highlight {
@@ -481,18 +479,19 @@ p {
   display: flex;              /* lay photos side by side */
   justify-content: flex-start; /* align to left */
   align-items: center;
-  gap: 15px;                  /* space between photos */
+  gap: 30px;                  /* space between photos */
   flex-wrap: wrap;            /* optional: wrap to next line if screen too small */
 }
 
 /* Individual photo boxes */
 .achievement-photos .photo-square {
   position: relative;         /* remove absolute positioning */
-  width: 150px;
-  height: 150px;
-  border-radius: 8px;         /* photograph corners */
+  width: 80%;
+  height: 80%;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-bottom: 25px;
   overflow: hidden;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
   transition: transform 0.4s ease;
 }
 
