@@ -35,10 +35,15 @@ body {
 }
 
 .col-md-2 {
+  position: fixed;
+  top: 0;
+  left: 0;
   background-color: #000;
   color: #fff;
   padding: 1.25rem;      
-  min-height: 100vh;      
+  min-height: 100vh;    
+  overflow-y: auto;
+  z-index: 1000;  
 }
 
 .col-md-2 .nav-item {
@@ -86,12 +91,11 @@ p {
   object-fit: cover;   
 }
 
-
 #home {
   display: flex;                /* only flex when active */
   justify-content: space-between;
   align-items: center;
-  height: 100vh;
+  height: 80vh;
   padding: 20px;
 }
 
