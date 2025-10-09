@@ -102,7 +102,7 @@ p {
   flex-direction: row !important;
   justify-content: space-between;
   align-items: center;
-  height: 80vh;
+  height: 100vh;
   padding: 20px;
 }
 
@@ -237,7 +237,7 @@ p {
   padding: 25px 30px;
   box-shadow: 0 4px 10px rgba(115, 100, 138, 0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  margin-bottom: 0px;
+  margin-bottom: 20px;
 }
 
 .about-content {
