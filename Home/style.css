@@ -667,9 +667,13 @@ p {
 }
 
 .resource-item {
+  width: 150px;                /* fixed square width */
+  height: 150px;               /* fixed square height */
   display: flex;
   flex-direction: column;
-  align-items: center;
+  justify-content: center;     /* centers content vertically */
+  align-items: center;         /* centers content horizontally */
+  text-align: center;
   text-decoration: none;
   color: #333;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
