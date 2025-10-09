@@ -1,5 +1,5 @@
 window.addEventListener('scroll', () => {
-  let fromTop = window.scrollY + 200; // offset for fixed sidebar
+  let fromTop = window.scrollY + 100; // offset for fixed sidebar
   document.querySelectorAll('.nav-link').forEach(link => {
     let section = document.querySelector(link.getAttribute('href'));
     if (section.offsetTop <= fromTop && section.offsetTop + section.offsetHeight > fromTop) {

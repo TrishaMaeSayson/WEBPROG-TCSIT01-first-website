@@ -18,7 +18,7 @@ body {
 
 .content-section {
   min-height: auto; /* occupy one full screen */
-  padding: 60px 40px;
+  padding: 80px 40px 120px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -237,7 +237,7 @@ p {
   padding: 25px 30px;
   box-shadow: 0 4px 10px rgba(115, 100, 138, 0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 .about-content {
