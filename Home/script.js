@@ -1,11 +1,15 @@
 window.addEventListener('scroll', () => {
-  let fromTop = window.scrollY + 100; // offset for fixed sidebar
+  let scrollPosition = window.scrollY + window.innerHeight / 3; // detect a bit before section midpoint
   document.querySelectorAll('.nav-link').forEach(link => {
-    let section = document.querySelector(link.getAttribute('href'));
-    if (section.offsetTop <= fromTop && section.offsetTop + section.offsetHeight > fromTop) {
-      link.classList.add('active');
-    } else {
-      link.classList.remove('active');
+    const section = document.querySelector(link.getAttribute('href'));
+    if (section) {
+      const sectionTop = section.offsetTop;
+      const sectionBottom = sectionTop + section.offsetHeight;
+      if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+        link.classList.add('active');
+      } else {
+        link.classList.remove('active');
+      }
     }
   });
 });
