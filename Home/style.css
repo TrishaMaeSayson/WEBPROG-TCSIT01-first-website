@@ -63,6 +63,12 @@ body {
   cursor: pointer;
 }
 
+.col-md-10 {
+  margin-left: 16.6667%; /* roughly the width of col-md-2 (2/12 columns) */
+  width: 83.3333%;
+  padding: 40px;
+}
+
 h1{
   margin-top: 1rem;
   font-family: 'Abril Fatface', serif;
