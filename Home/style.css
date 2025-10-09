@@ -57,6 +57,15 @@ p {
   font-size: 16px;
 }
 
+.section-box {
+  background-color: #f3eefc;
+  border: 2px solid #a393bf;
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 4px 10px rgba(115, 100, 138, 0.2);
+  margin-top: 20px;
+}
+
 .profile-pic { 
   min-height: 25vh;     
   width: 150px;
@@ -91,19 +100,19 @@ p {
   font-size: 40px;
 }
 
-.word-thoughts { 
-  font-family: 'Lucida Handwriting', cursive; 
-  color: #73648a;
+.word {
+  font-family: 'Lucida Handwriting', cursive;
+}
+.word.thoughts { 
+  color: #73648a; 
 }
 
-.word-feelings { 
-  font-family: 'Lucida Handwriting', cursive; 
-  color: #9882ac;
+.word.feelings { 
+  color: #9882ac; 
 }
 
-.word-actions { 
-  font-family: 'Lucida Handwriting', cursive; 
-  color: #a393bf;
+.word.actions { 
+  color: #a393bf; 
 }
 
 #home h2 {
@@ -367,18 +376,6 @@ p {
   margin-top: 30px;
 }
 
-/* Left Rectangle */
-.education-box {
-  flex: 1;
-  background-color: #f3eefc;
-  border: 2px solid #a393bf;
-  border-radius: 15px;
-  padding: 25px 30px;
-  box-shadow: 0 4px 10px rgba(115, 100, 138, 0.2);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  margin-bottom: 18px;
-}
-
 .school-entry {
   margin-bottom: 18px;
 }
@@ -444,19 +441,6 @@ p {
   z-index: 4;
 }
 
-/* Container layout */
-.achievements-box {
-  display: flex;
-  background-color: #f3eefc;
-  border: 2px solid #a393bf;
-  border-radius: 15px;
-  padding: 25px 30px;
-  box-shadow: 0 4px 10px rgba(115, 100, 138, 0.2);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  flex-direction: column;
-  gap: 20px;
-}
-
 /* Text details */
 .achievement-details {
   padding: 10px 15px;
@@ -497,20 +481,6 @@ p {
 
 .achievement-photos .photo-square:hover {
   transform: scale(1.05);     /* subtle hover effect */
-}
-
-/* CONTACT SECTION */
-.contact-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  background-color: #f3eefc;
-  border: 2px solid #a393bf;
-  border-radius: 15px;
-  padding: 30px;
-  box-shadow: 0 4px 10px rgba(115, 100, 138, 0.2);
-  flex-wrap: wrap;
-  gap: 40px;
 }
 
 /* Left Side */
