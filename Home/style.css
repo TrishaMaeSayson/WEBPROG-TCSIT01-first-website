@@ -12,6 +12,18 @@ body {
   font-family: Verdana, sans-serif;
 }
 
+.content-section:not(#home) {
+  padding: 40px 20px;
+}
+
+.content-section {
+  min-height: 100vh; /* occupy one full screen */
+  padding: 60px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .nav-link.active {
   color: #a393bf; /* highlight color */
   font-weight: bold;
@@ -74,15 +86,12 @@ p {
   object-fit: cover;   
 }
 
-#home {
-  display: none; /* hidden by default */
-}
 
-#home.active {
+#home {
   display: flex;                /* only flex when active */
   justify-content: space-between;
   align-items: center;
-  height: 80vh;
+  height: 100vh;
   padding: 20px;
 }
 
@@ -721,14 +730,6 @@ p {
   box-shadow: 0 6px 16px rgba(0,0,0,0.15);
 }
 
-.content-section:not(#home) {
-  padding: 40px 20px;
-}
 
-.content-section {
-  display: none;
-}
 
-.content-section.active { 
-  display: block; 
-}
+
