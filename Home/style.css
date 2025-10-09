@@ -656,19 +656,11 @@ p {
 }
 
 /* Resources Section */
-#resources {
-  text-align: center;
-  padding: 40px 0;
-}
-
-#resources h2 {
-  margin-bottom: 20px;
-}
 
 .resources-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
+  gap: 15px;
   justify-items: center;
   align-items: center;
   margin-top: 30px;
