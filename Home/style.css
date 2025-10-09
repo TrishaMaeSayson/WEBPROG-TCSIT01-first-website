@@ -2,10 +2,19 @@
   box-sizing: border-box; 
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;                    
   background-color: #FFFFFF; 
   font-family: Verdana, sans-serif;
+}
+
+.nav-link.active {
+  color: #a393bf; /* highlight color */
+  font-weight: bold;
 }
 
 .container-fluid {
@@ -208,7 +217,7 @@ p {
   padding: 25px 30px;
   box-shadow: 0 4px 10px rgba(115, 100, 138, 0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  margin-bottom: 18px;
+  margin-bottom: 10px;
 }
 
 .about-content {
@@ -387,7 +396,7 @@ p {
   padding: 25px 30px;
   box-shadow: 0 4px 10px rgba(115, 100, 138, 0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  margin-bottom: 18px;
+  margin-bottom: 10px;
 }
 
 .school-entry {
@@ -465,7 +474,7 @@ p {
   box-shadow: 0 4px 10px rgba(115, 100, 138, 0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   flex-direction: column;
-  gap: 20px;
+  gap: 10px;
 }
 
 /* Text details */
@@ -678,8 +687,8 @@ p {
 }
 
 .resource-item {
-  width: 150px;                /* fixed square width */
-  height: 150px;               /* fixed square height */
+  width: 200px;                /* fixed square width */
+  height: 200px;               /* fixed square height */
   display: flex;
   flex-direction: column;
   justify-content: center;     /* centers content vertically */

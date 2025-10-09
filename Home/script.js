@@ -1,7 +1,14 @@
-function showSection(sectionId) {
-  document.querySelectorAll('.content-section').forEach(sec => sec.classList.remove('active'));
-  document.getElementById(sectionId).classList.add('active');
-}
+window.addEventListener('scroll', () => {
+  let fromTop = window.scrollY + 100; // offset for fixed sidebar
+  document.querySelectorAll('.nav-link').forEach(link => {
+    let section = document.querySelector(link.getAttribute('href'));
+    if (section.offsetTop <= fromTop && section.offsetTop + section.offsetHeight > fromTop) {
+      link.classList.add('active');
+    } else {
+      link.classList.remove('active');
+    }
+  });
+});
 
 document.addEventListener("DOMContentLoaded", () => {
   const text1 = "The only 3 things that you can control are your";
