@@ -601,6 +601,60 @@ p {
   display: none;
 }
 
+/* Contact Info Container */
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Each row (icon + text) */
+.info-item {
+  display: flex;
+  align-items: center;  /* vertically center icon + text */
+  gap: 15px;
+}
+
+/* Font Awesome Icon */
+.info-item i {
+  font-size: 30px;
+  color: #73648a;
+  min-width: 40px;     /* keeps icons aligned even if text lengths differ */
+  text-align: center;
+}
+
+/* Text beside icon */
+.info-text p {
+  margin: 2px 0;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+/* Bolded labels */
+.info-text strong {
+  color: #73648a;
+}
+
+/* GitHub link styling */
+.info-text a {
+  color: #73648a;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.info-text a:hover {
+  color: #a393bf;
+  text-decoration: underline;
+}
+
+.info-item .fa-facebook {
+  color: #1877f2; /* Facebook blue */
+}
+
+.info-item .fa-github {
+  color: #333; /* GitHub dark gray */
+}
+
 .content-section:not(#home) {
   padding: 40px 20px;
 }
